@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Jack Liedel – Portfolio</title>
+  <title>Jack Liedel – Mechanical Design Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio of Your Name – Your Role or Field">
+  <meta name="description" content="Portfolio of Jack Liedel – Mechanical Engineering student focused on mechanical design, analysis, and testing.">
   <style>
     * {
       box-sizing: border-box;
@@ -232,6 +232,14 @@
       color: #4b5563;
     }
 
+    /* Awards */
+    .awards-list {
+      font-size: 0.9rem;
+      color: #4b5563;
+      list-style: disc;
+      padding-left: 1.25rem;
+    }
+
     /* Contact */
     .contact-box {
       background: #111827;
@@ -280,11 +288,12 @@
   <!-- Navigation -->
   <div class="nav">
     <div class="nav-inner">
-      <div class="nav-brand">Your Name</div>
+      <div class="nav-brand">Jack Liedel</div>
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
+        <a href="#awards">Awards</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -294,26 +303,30 @@
   <header class="hero">
     <div class="container hero-grid">
       <div>
-        <h1 class="hero-title">Hi, I’m Your Name.</h1>
-        <p class="hero-subtitle">Your Role or Field (e.g., Mechanical Engineer, Software Developer)</p>
+        <h1 class="hero-title">Hi, I’m Jack Liedel.</h1>
+        <p class="hero-subtitle">Mechanical Engineering Student · Vanderbilt University</p>
         <p class="hero-tagline">
-          1–2 sentences about what you build, what you’re interested in, or the value you bring.
+          I’m a mechanical design engineer in training focused on building, analyzing, and testing hardware
+          that has to work in demanding environments — from rocket payloads to tunnel boring machines and
+          experimental drone structures.
         </p>
         <div class="hero-buttons">
           <a href="#projects" class="btn">View my projects</a>
-          <a href="YOUR_RESUME_LINK_HERE" class="btn btn-outline" target="_blank" rel="noopener">
-            View resume
+          <!-- Replace this with an actual resume link if you put your PDF online -->
+          <a href="#" class="btn btn-outline" target="_blank" rel="noopener">
+            View resume (PDF)
           </a>
         </div>
         <p class="hero-meta">
-          Currently: your status (e.g., “Looking for summer internships · Open to freelance”).<br />
-          Location · Email: <a href="mailto:you@example.com">you@example.com</a>
+          B.Eng. Mechanical Engineering (Honors), Vanderbilt University · Expected Graduation: May 2026<br />
+          GPA: 3.90 / 4.00 · Dean’s List (all semesters)<br />
+          Email: <a href="mailto:jack.liedel@vanderbilt.edu">jack.liedel@vanderbilt.edu</a>
         </p>
       </div>
       <div>
-        <!-- Replace with an actual photo later if you want -->
-        <div class="hero-photo">
-          <span>👋</span>
+        <!-- Placeholder avatar; swap for a real photo if you like -->
+        <div class="hero-photo" aria-label="Portrait placeholder">
+          <span>🚀</span>
         </div>
       </div>
     </div>
@@ -324,74 +337,133 @@
     <div class="container">
       <h2 class="section-title">About</h2>
       <p class="about-text">
-        Write a short paragraph or two about yourself. Mention your background, what you’re studying or
-        working on, and the kind of problems you like solving. Highlight relevant experience or interests
-        (e.g., “I enjoy designing mechanical systems,” “I love building full-stack web apps,” etc.).
+        I’m a mechanical engineering student at Vanderbilt University with a focus on mechanical design,
+        analysis, and hardware development. My experience spans rocket payload systems, tunnel boring
+        machinery, experimental drone structures, and hypersonic research hardware.
+      </p>
+      <br />
+      <p class="about-text">
+        I enjoy taking systems from requirements and theory through modeling, design reviews, prototyping,
+        and testing. I’m comfortable iterating quickly — whether that’s designing for manufacturability,
+        tightening up a CAD model for machining, or validating a concept with experiments and data.
       </p>
     </div>
   </section>
 
-  <!-- Projects -->
+  <!-- Projects / Experience -->
   <section id="projects">
     <div class="container">
-      <h2 class="section-title">Projects</h2>
+      <h2 class="section-title">Projects & Experience</h2>
       <div class="projects-grid">
-        <!-- Project 1 -->
+        <!-- Project 1: Vanderbilt Aerospace Design Lab -->
         <article class="project-card">
           <div>
-            <h3 class="project-name">Project Name #1</h3>
-            <p class="project-meta">Role · Tools/Tech · Year</p>
+            <h3 class="project-name">Vanderbilt Aerospace Design Lab – Rocket Payload Systems</h3>
+            <p class="project-meta">
+              President · Vanderbilt Aerospace Design Lab (Rocket Team) · Nashville, TN · Oct 2023 – Present
+            </p>
             <p class="project-desc">
-              Describe the problem, what you built, and the impact. Focus on your contribution.
-              Keep it 3–4 sentences max and mention results if possible (e.g., “reduced X by 20%”).
+              Lead design, analysis, manufacturing, and integration of rocket payload subsystems for NASA
+              rocketry competitions. Designed mechanisms including a rotating bulkplate system, passive shovel
+              actuation system, soil collection system, and leg deployment system. Managed manufacturing using
+              CNC, lathe, and 3D printing, oversaw integration to top-level assemblies, and led design reviews,
+              drawing redlines, and field engineering during launches.
             </p>
             <div class="project-tags">
-              <span class="tag">Tool/Tech</span>
-              <span class="tag">Skill</span>
-              <span class="tag">Domain</span>
+              <span class="tag">Mechanical Design</span>
+              <span class="tag">SolidWorks</span>
+              <span class="tag">Rocketry</span>
+              <span class="tag">CNC & 3D Printing</span>
+              <span class="tag">Systems Integration</span>
             </div>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/yourusername/yourproject" target="_blank" rel="noopener">Code</a>
-            <a href="https://your-demo-link.com" target="_blank" rel="noopener">Live demo</a>
           </div>
         </article>
 
-        <!-- Project 2 -->
+        <!-- Project 2: The Boring Company -->
         <article class="project-card">
           <div>
-            <h3 class="project-name">Project Name #2</h3>
-            <p class="project-meta">Role · Tools/Tech · Year</p>
+            <h3 class="project-name">Tunnel Boring Machine Mechanical Design</h3>
+            <p class="project-meta">
+              Mechanical Design Intern · The Boring Company · Bastrop, TX · May 2025 – Aug 2025
+            </p>
             <p class="project-desc">
-              Another project describing what you did. You can use bullet-like sentences to make it easier
-              to skim. Mention collaboration, constraints, and what you learned.
+              Developed and implemented radial targeting software for TBM operations, reducing ring build
+              time by ~40% during tests. Designed and oversaw manufacturing of propulsion shoes to address
+              segment cracking, saving on the order of $50,000 per mile, and contributed to an expanding ring
+              concept that reduced the need for costly tunnel grease and grout. Additional work included
+              carrier turnaround sprocket design, harmonic response analysis for a liner truck bumper to avoid
+              a new mounting subsystem, and various mounts, shrouds, and safety configurations for field use.
             </p>
             <div class="project-tags">
-              <span class="tag">Tool/Tech</span>
-              <span class="tag">Skill</span>
+              <span class="tag">Mechanical Design</span>
+              <span class="tag">Analysis</span>
+              <span class="tag">Cost Reduction</span>
+              <span class="tag">Manufacturing</span>
+              <span class="tag">Python / Math Modeling</span>
             </div>
-          </div>
-          <div class="project-links">
-            <a href="#" target="_blank" rel="noopener">Details</a>
           </div>
         </article>
 
-        <!-- Project 3 -->
+        <!-- Project 3: CPML Drone Arm Research -->
         <article class="project-card">
           <div>
-            <h3 class="project-name">Project Name #3</h3>
-            <p class="project-meta">Role · Tools/Tech · Year</p>
+            <h3 class="project-name">Optimized Drone Arm Design</h3>
+            <p class="project-meta">
+              Mechanical Engineer · Computational Physics and Mechanics Lab (CPML) · Nashville, TN · May 2024 – Present
+            </p>
             <p class="project-desc">
-              Brief description of another project. If you don’t have many yet, you can include
-              coursework, labs, hackathons, or personal experiments.
+              First-authored a research project using nTopology to redesign a consumer drone arm, achieving
+              ~70× reduction in deflection and ~6.6× reduction in maximum stress while significantly reducing
+              manufacturing time and cost. Validated designs experimentally and presented results at the
+              Vanderbilt Undergraduate Research Conference, supported by VUSE and SURP funding.
             </p>
             <div class="project-tags">
-              <span class="tag">Tool/Tech</span>
-              <span class="tag">Skill</span>
+              <span class="tag">nTopology</span>
+              <span class="tag">Finite Element Thinking</span>
+              <span class="tag">Experimental Validation</span>
+              <span class="tag">Additive Manufacturing</span>
             </div>
           </div>
-          <div class="project-links">
-            <a href="#" target="_blank" rel="noopener">More info</a>
+        </article>
+
+        <!-- Project 4: NASA AIR -->
+        <article class="project-card">
+          <div>
+            <h3 class="project-name">NASA Atmospheric Inert Gas Retrieval Hardware</h3>
+            <p class="project-meta">
+              Mechanical Engineer · NASA AIR · Wallops Island, VA · Sep 2022 – Aug 2023
+            </p>
+            <p class="project-desc">
+              Designed structural components for an inert atmospheric gas retrieval system in SolidWorks,
+              then 3D printed, prototyped, and tested to ensure mission readiness. Produced technical reports
+              and presentations at major design milestones including Proposal, PDR, CDR, FRR, and PLAR.
+            </p>
+            <div class="project-tags">
+              <span class="tag">SolidWorks</span>
+              <span class="tag">Prototyping</span>
+              <span class="tag">3D Printing</span>
+              <span class="tag">Design Reviews</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 5: Parziale Research Group -->
+        <article class="project-card">
+          <div>
+            <h3 class="project-name">Helmholtz Resonator for Hypersonic Tunnels</h3>
+            <p class="project-meta">
+              Mechanical Engineer · Parziale Research Group · Hoboken, NJ · Jun 2023 – Aug 2023
+            </p>
+            <p class="project-desc">
+              Designed a Helmholtz resonator for use in hypersonic tunnel environments, supporting
+              experimental fluid mechanics and high-speed flow research. Work involved translating
+              theoretical acoustics and flow considerations into manufacturable hardware.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Hypersonics</span>
+              <span class="tag">Experimental Hardware</span>
+              <span class="tag">Mechanical Design</span>
+            </div>
           </div>
         </article>
       </div>
@@ -404,18 +476,53 @@
       <h2 class="section-title">Skills</h2>
       <div class="skills-grid">
         <div>
-          <p class="skills-group-title">Languages</p>
-          <p class="skills-list">Python, C++, JavaScript, …</p>
+          <p class="skills-group-title">Mechanical & CAD</p>
+          <p class="skills-list">
+            SolidWorks (CSWA certified), nTopology, ANSYS, GD&amp;T, requirements management, mechanism design,
+            structural design, design for manufacturability.
+          </p>
         </div>
         <div>
-          <p class="skills-group-title">Tools & Frameworks</p>
-          <p class="skills-list">SolidWorks, MATLAB, React, Node.js, AutoCAD, …</p>
+          <p class="skills-group-title">Analysis & Simulation</p>
+          <p class="skills-list">
+            MATLAB, LabVIEW, analytical modeling, system dynamics, continuum mechanics, fluid dynamics,
+            heat transfer, aerospace propulsion.
+          </p>
         </div>
         <div>
-          <p class="skills-group-title">Areas</p>
-          <p class="skills-list">Control systems, web development, embedded systems, data analysis, …</p>
+          <p class="skills-group-title">Prototyping & Manufacturing</p>
+          <p class="skills-list">
+            Additive manufacturing, CNC machining, lathe work, 3D printing, integration and test,
+            field engineering, design reviews, technical documentation.
+          </p>
+        </div>
+        <div>
+          <p class="skills-group-title">Other</p>
+          <p class="skills-list">
+            Technical writing, drawing redlines, collaboration with multidisciplinary teams, leading
+            design and integration efforts, presenting to reviewers and sponsors.
+          </p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Awards & Coursework -->
+  <section id="awards">
+    <div class="container">
+      <h2 class="section-title">Awards & Selected Coursework</h2>
+      <ul class="awards-list">
+        <li>NASA SLI Award (2024, 2025)</li>
+        <li>Taylor Hayden Scholarship</li>
+        <li>VUSE Grant Awardee · SURP Grant Recipient</li>
+        <li>EAS Scholarship · NASA Space Grant Awardee</li>
+      </ul>
+      <br />
+      <p class="skills-group-title">Relevant Coursework</p>
+      <p class="skills-list">
+        Continuum Mechanics, Aerospace Propulsion, Thermodynamics, System Dynamics, Fluid Dynamics,
+        Heat Transfer.
+      </p>
     </div>
   </section>
 
@@ -425,20 +532,24 @@
       <div class="contact-box">
         <h2 class="section-title" style="color:#f9fafb; margin-bottom:0.75rem;">Let’s connect</h2>
         <p>
-          Whether you have an opportunity, a question, or just want to say hi, feel free to reach out.
+          I’m interested in opportunities related to mechanical design, analysis, and hardware testing —
+          especially in aerospace, robotics, and infrastructure.
         </p>
-        <p><strong>Email:</strong> <a href="mailto:you@example.com">you@example.com</a></p>
+        <p>
+          <strong>Email:</strong>
+          <a href="mailto:jack.liedel@vanderbilt.edu">jack.liedel@vanderbilt.edu</a>
+        </p>
         <div class="contact-links">
-          <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://github.com/YOUR_GITHUB" target="_blank" rel="noopener">GitHub</a>
-          <a href="YOUR_RESUME_LINK_HERE" target="_blank" rel="noopener">Resume</a>
+          <!-- Replace these with your real profile URLs -->
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
     </div>
   </section>
 
   <footer>
-    © <span id="year"></span> Your Name. All rights reserved.
+    © <span id="year"></span> Jack Liedel. All rights reserved.
   </footer>
 
   <script>
@@ -447,3 +558,4 @@
   </script>
 </body>
 </html>
+

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VADL 25–26 – Rocket Vehicle & Payload Design | Jack Liedel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+      line-height: 1.6;
+      background: #f5f5f7;
+      color: #111827;
+    }
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      margin-bottom: 2rem;
+    }
+
+    .back-link {
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.25rem;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.25rem;
+    }
+
+    p {
+      margin-bottom: 0.75rem;
+      color: #374151;
+    }
+
+    ul {
+      margin: 0.25rem 0 0.75rem 1.25rem;
+      color: #4b5563;
+    }
+
+    .meta {
+      font-size: 0.9rem;
+      color: #6b7280;
+      margin-bottom: 1rem;
+    }
+
+    .tag-row {
+      margin-top: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      background: #e5e7eb;
+      color: #374151;
+    }
+
+    .section-intro {
+      max-width: 70ch;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    figure {
+      margin: 0;
+      background: #ffffff;
+      border-radius: 0.75rem;
+      padding: 0.6rem;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 8px 20px rgba(15,23,42,0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 0.5rem;
+      display: block;
+    }
+
+    figcaption {
+      font-size: 0.8rem;
+      color: #4b5563;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding-inline: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="back-link" href="index.html">← Back to main portfolio</a>
+
+  <header>
+    <h1>VADL 25–26 · Vehicle & Payload Design</h1>
+    <div class="meta">
+      Vanderbilt Aerospace Design Lab (Rocket Team) · Mechanical Design & Integration
+    </div>
+    <p class="section-intro">
+      This page highlights my work on the 2025–2026 Vanderbilt Aerospace Design Lab rocket, focusing on
+      vehicle structure, payload mechanisms, and manufacturing/testing. All of the images below are my
+      own CAD, drawings, builds, or test setups.
+    </p>
+    <div class="tag-row">
+      <span class="tag">Mechanical Design</span>
+      <span class="tag">SolidWorks</span>
+      <span class="tag">FEA Thinking</span>
+      <span class="tag">CNC &amp; 3D Printing</span>
+      <span class="tag">Systems Integration</span>
+    </div>
+  </header>
+
+  <!-- Vehicle Design -->
+  <section>
+    <h2>Vehicle Design</h2>
+    <p class="section-intro">
+      Vehicle-side work for VADL 25–26 included bulkplates, recovery bay layout, fincan, boat tail,
+      LDM airframe, and nosecone. These images show representative CAD and drawings of the vehicle
+      structures I worked on.
+    </p>
+
+    <h3>Bulkplates, Recovery Bay, Fincan, Boat Tail, LDM Airframe, Nosecone</h3>
+    <div class="image-grid">
+      <!-- Vehicle Design images (pages 1–5) -->
+      <figure>
+        <img src="images/img_1_1.png" alt="Vehicle bulkplate CAD / drawing">
+        <figcaption>Bulkplate CAD / drawing for the primary vehicle structure.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/img_1_2.png" alt="Vehicle bulkplate detailed view">
+        <figcaption>Detail view of bulkplate features and mounting patterns.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/img_2_1.png" alt="Vehicle structure CAD">
+        <figcaption>Vehicle structure with integrated bulkplates.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/img_2_2.png" alt="Vehicle CAD section view">
+        <figcaption>Section view showing internal layout and interfaces.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/img_3_1.png" alt="Recovery bay / parachute packing CAD">
+        <figcaption>Recovery bay layout used for parachute packing and hardware routing.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/img_3_2.png" alt="Recovery bay detail">
+        <figcaption>Detail of recovery bay mounting and access features.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/img_4_1.png" alt="Fincan CAD">
+        <figcaption>Fincan CAD showing fin integration and structural reinforcement.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/img_4_2.png" alt="Boat tail / aft end CAD">
+        <figcaption>Boat tail geometry designed for structural performance and aerodynamics.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/img_4_3.png" alt="LDM airframe CAD">
+        <figcaption>LDM airframe modeling including joint and fastener strategy.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/img_5_1.png" alt="Nosecone CAD">
+        <figcaption>Nosecone CAD with internal payload/avionics interfaces.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/img_5_2.png" alt="Nosecone structure detail">
+        <figcaption>Detail view of nosecone structural and mounting features.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/img_5_3.png" alt="Vehicle assembly overview">
+        <figcaption>Overview of the full vehicle assembly for VADL 25–26.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Payload Design -->
+  <section>
+    <h2>Payload Design</h2>
+    <p class="section-intro">
+      The payload for 25–26 included multiple mechanisms: a rotating bulkplate system, shovel extension,
+      leg deployment system, parachute detachment, avionics bay, and soil chamber. These images show
+      the CAD and assembly drawings for those subsystems.
+    </p>
+
+    <div class="image-grid">
+      <!-- Payload Design images (pages 6–14) -->
+      <figure>
+        <img src="images/img_6_1.png" alt="Rotating bulkplate system CAD">
+        <figcaption>Rotating bulkplate system used to support payload deployment and internal routing.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/img_6_2.png" alt="Rotating bulkplate assembly view">
+        <figcaption>Assembly view of the rotating bulkplate mechanism and supporting hardware.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/img_7_1.png" alt="Shovel extension mechanism CAD">
+        <figcaption>Shovel extension mechanism for soil interaction and sample collection.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/img_7_2.png" alt="Shovel extension detail">
+        <figcaption>Detail view of the shovel extension linkage and mounting.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/img_8_1.png" alt="Leg deployment system CAD">
+        <figcaption>Leg deployment system designed to actuate reliably after landing.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/img_8_2.png" alt="Leg deployment detail">
+        <figcaption>Mechanism detail of leg hinges, stops, and actuation hardware.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/img_9_1.png" alt="Parachute detachment mechanism CAD">
+        <figcaption>Parachute detachment mechanism integrated into the payload structure.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/img_9_2.png" alt="Parachute detachment assembly">
+        <figcaption>Assembly drawing illustrating routing and interfaces for detachment hardware.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/img_10_1.png" alt="Avionics bay CAD">
+        <figcaption>Avionics bay layout showing boards, wiring paths, and mounting points.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/img_11_1.png" alt="Avionics bay assembly drawing">
+        <figcaption>Assembly drawing for avionics bay including connectors and fasteners.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/img_11_2.png" alt="Soil chamber CAD">
+        <figcaption>Soil chamber geometry designed to capture and retain collected material.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/img_12_1.png" alt="Soil chamber internal view">
+        <figcaption>Internal view of soil chamber structure and sealing strategy.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/img_12_2.png" alt="Payload assembly overview">
+        <figcaption>Overview of the payload assembly with major subsystems labeled.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/img_13_1.png" alt="Payload structure drawing">
+        <figcaption>Detailed drawing for payload structural components and interfaces.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/img_14_1.png" alt="Payload section view">
+        <figcaption>Section view of payload stackup and subsystem integration.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/img_14_2.png" alt="Full payload CAD view">
+        <figcaption>Full payload CAD highlighting mechanism locations within the stack.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Vehicle Manufacturing -->
+  <section>
+    <h2>Vehicle Manufacturing</h2>
+    <p class="section-intro">
+      Manufacturing work included building the subscale vehicle and validating the design through
+      integration and fit checks before competition builds.
+    </p>
+
+    <div class="image-grid">
+      <figure>
+        <img src="images/img_15_1.png" alt="Subscale rocket build in progress">
+        <figcaption>Subscale rocket build used to validate vehicle design and integration approach.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/img_15_2.png" alt="Subscale vehicle on bench">
+        <figcaption>Completed subscale vehicle on the bench prior to testing.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Payload Manufacturing & Testing -->
+  <section>
+    <h2>Payload Manufacturing & Testing</h2>
+    <p class="section-intro">
+      These images show manufacturing of payload hardware, the drop test rig, and representative payload
+      test setups used to verify deployment and robustness.
+    </p>
+
+    <div class="image-grid">
+      <figure>
+        <img src="images/img_16_1.png" alt="Payload hardware manufacturing">
+        <figcaption>Payload components post-machining and printing, prior to final assembly.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/img_16_2.png" alt="Payload assembly on bench">
+        <figcaption>Payload assembly on the bench for integration and inspection.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/img_16_3.png" alt="Drop test rig">
+        <figcaption>Drop test rig used to validate deployment and impact behavior.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/img_16_4.png" alt="Payload test setup">
+        <figcaption>Payload test setup with instrumentation and safety constraints in place.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/img_17_1.png" alt="Payload test in progress">
+        <figcaption>In-progress payload test showing configuration during dynamic evaluation.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/img_17_2.png" alt="Post-test inspection">
+        <figcaption>Post-test inspection of payload hardware after drop and deployment testing.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+</body>
+</html>

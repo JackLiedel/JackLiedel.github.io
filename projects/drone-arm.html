@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Topology Optimized Drone Arm – CPML | Jack Liedel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+      line-height: 1.6;
+      background: #0d1117;      /* dark background */
+      color: #e6edf3;
+    }
+
+    a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .back-link {
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+      color: #8b949e;
+    }
+
+    header {
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.25rem;
+      color: #ffffff;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+      color: #ffffff;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      margin-top: 1.1rem;
+      margin-bottom: 0.25rem;
+      color: #e6edf3;
+    }
+
+    p {
+      margin-bottom: 0.75rem;
+      color: #c9d1d9;
+    }
+
+    ul {
+      margin: 0.25rem 0 0.75rem 1.25rem;
+      color: #c9d1d9;
+    }
+
+    .meta {
+      font-size: 0.9rem;
+      color: #8b949e;
+      margin-bottom: 1rem;
+    }
+
+    .tag-row {
+      margin-top: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      background: #30363d;
+      color: #e6edf3;
+    }
+
+    .section-intro {
+      max-width: 70ch;
+    }
+
+    /* Image layout */
+    .hero-image {
+      width: 100%;
+      border-radius: 0.9rem;
+      border: 1px solid #30363d;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.75);
+      display: block;
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    .hero-caption {
+      font-size: 0.85rem;
+      color: #8b949e;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    figure {
+      margin: 0;
+      background: #161b22;
+      border-radius: 0.75rem;
+      padding: 0.6rem;
+      border: 1px solid #30363d;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 0.5rem;
+      display: block;
+    }
+
+    figcaption {
+      font-size: 0.8rem;
+      color: #8b949e;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding-inline: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="back-link" href="../index.html">← Back to main portfolio</a>
+
+  <header>
+    <h1>Topology Optimized Drone Arm</h1>
+    <div class="meta">
+      Mechanical Engineer · Computational Physics and Mechanics Lab (CPML) · May 2024 – Present
+    </div>
+    <p class="section-intro">
+      At CPML, I led the mechanical design and optimization of a topology-optimized drone arm using
+      nTopology, targeting large reductions in deflection and stress while keeping the design
+      manufacturable and low-cost. The work combined analytical modeling, topology optimization workflows,
+      additive manufacturing, and experimental validation.
+    </p>
+    <div class="tag-row">
+      <span class="tag">Topology Optimization</span>
+      <span class="tag">nTopology</span>
+      <span class="tag">Finite Element Thinking</span>
+      <span class="tag">Additive Manufacturing</span>
+      <span class="tag">Experimental Validation</span>
+    </div>
+
+    <!-- Hero image: swap src to one of your best arm overview renders -->
+    <img src="../images/DRONE_HERO_1.png" alt="Topology optimized drone arm CAD overview" class="hero-image">
+    <div class="hero-caption">
+      Topology-optimized drone arm geometry showing internal structure and mounting regions.
+    </div>
+  </header>
+
+  <!-- Problem & Goals -->
+  <section>
+    <h2>Problem & Goals</h2>
+    <p class="section-intro">
+      The baseline drone arm exhibited excessive deflection and stress under flight loads. The goal was to
+      design a replacement arm that:
+    </p>
+    <ul>
+      <li>Reduced tip deflection by an order of magnitude under representative loading,</li>
+      <li>Lowered maximum von Mises stress while maintaining safety margins,</li>
+      <li>Remained compatible with the existing drone architecture and mounting pattern, and</li>
+      <li>Could be manufactured quickly via additive processes at low cost.</li>
+    </ul>
+  </section>
+
+  <!-- Baseline vs Optimized Design -->
+  <section>
+    <h2>Baseline vs Optimized Design</h2>
+    <p class="section-intro">
+      I rebuilt the baseline arm geometry, applied loading and constraints, and used nTopology to drive
+      topology optimization. The workflow produced an arm that reduced deflection by ~70× and peak stress
+      by ~6.6× compared to the original design while also simplifying manufacturing.
+    </p>
+
+    <div class="image-grid">
+      <figure>
+        <img src="../images/DRONE_BASELINE.png" alt="Baseline drone arm CAD">
+        <figcaption>Baseline drone arm model used as the starting point for optimization.</figcaption>
+      </figure>
+      <figure>
+        <img src="../images/DRONE_OPTIMIZED_1.png" alt="Optimized drone arm CAD">
+        <figcaption>Topology-optimized arm geometry generated in nTopology.</figcaption>
+      </figure>
+      <figure>
+        <img src="../images/DRONE_SIDE_BY_SIDE.png" alt="Baseline vs optimized comparison">
+        <figcaption>Comparison between baseline and optimized arm envelopes and mounting interfaces.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Optimization Workflow & Analysis -->
+  <section>
+    <h2>Optimization Workflow & Analysis</h2>
+    <p class="section-intro">
+      I set up load cases based on thrust, weight, and maneuver-induced loads, then iterated on topology
+      optimization parameters to balance stiffness, mass, and printability. Post-processing included
+      smoothing, filleting critical regions, and checking manufacturability.
+    </p>
+
+    <div class="image-grid">
+      <figure>
+        <img src="../images/DRONE_TOPOLOGY_FIELD.png" alt="Topology optimization field">
+        <figcaption>Topology optimization density field within the design envelope.</figcaption>
+      </figure>
+      <figure>
+        <img src="../images/DRONE_STRESS_PLOT.png" alt="Stress plot comparison">
+        <figcaption>Stress distribution in the optimized arm under primary load case.</figcaption>
+      </figure>
+      <figure>
+        <img src="../images/DRONE_DEFLECTION_PLOT.png" alt="Deflection comparison">
+        <figcaption>Deflection comparison between baseline and optimized arms.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Manufacturing & Experimental Validation -->
+  <section>
+    <h2>Manufacturing & Experimental Validation</h2>
+    <p class="section-intro">
+      The final design was fabricated using additive manufacturing. I built fixtures and a test setup to
+      measure stiffness and compare experimental results against simulation, validating the large reduction
+      in deflection and stress.
+    </p>
+
+    <div class="image-grid">
+      <figure>
+        <img src="../images/DRONE_PRINTED_1.png" alt="Printed optimized drone arm">
+        <figcaption>Printed topology-optimized arm after support removal and cleanup.</figcaption>
+      </figure>
+      <figure>
+        <img src="../images/DRONE_PRINTED_2.png" alt="Test setup for the arm">
+        <figcaption>Experimental test setup used to measure stiffness and deflection.</figcaption>
+      </figure>
+      <figure>
+        <img src="../images/DRONE_TEST_RESULTS.png" alt="Experimental vs simulation results">
+        <figcaption>Comparison of experimental deflection data vs simulation predictions.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Impact -->
+  <section>
+    <h2>Impact</h2>
+    <p class="section-intro">
+      This work demonstrated that topology optimization combined with additive manufacturing can deliver
+      dramatic improvements in stiffness and stress while keeping designs practical to build. I presented
+      the project at the Vanderbilt Undergraduate Research Conference with support from VUSE and SURP.
+    </p>
+  </section>
+</body>
+</html>

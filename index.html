@@ -309,37 +309,46 @@ footer {
 
   <!-- Hero -->
   <header class="hero">
-    <div class="container hero-grid">
-      <div>
-        <h1 class="hero-title">Hi, I’m Jack Liedel.</h1>
-        <p class="hero-subtitle">Mechanical Engineering Student · Vanderbilt University</p>
-        <p class="hero-tagline">
-          I’m a mechanical design engineer in training focused on building, analyzing, and testing hardware
-          that has to work in demanding environments — from rocket payloads to tunnel boring machines and
-          experimental drone structures.
-        </p>
-        <div class="hero-buttons">
-          <a href="#projects" class="btn">View my projects</a>
-          <!-- Replace this with an actual resume link if you put your PDF online -->
-          <a href="#" class="btn btn-outline" target="_blank" rel="noopener">
-            View resume (PDF)
-          </a>
-        </div>
-        <p class="hero-meta">
-          B.Eng. Mechanical Engineering (Honors), Vanderbilt University · Expected Graduation: May 2026<br />
-          GPA: 3.90 / 4.00 · Dean’s List (all semesters)<br />
-          Email: <a href="mailto:jack.liedel@vanderbilt.edu">jack.liedel@vanderbilt.edu</a>
-        </p>
+  <!-- Background video -->
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="media/hero.mp4" type="video/mp4">
+    <!-- Fallback text -->
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Dark overlay on top of video -->
+  <div class="hero-video-overlay"></div>
+
+  <!-- Existing hero content -->
+  <div class="container hero-grid">
+    <div>
+      <h1 class="hero-title">Hi, I’m Jack Liedel.</h1>
+      <p class="hero-subtitle">Mechanical Engineering Student · Vanderbilt University</p>
+      <p class="hero-tagline">
+        I’m a mechanical design engineer in training focused on building, analyzing, and testing hardware
+        that has to work in demanding environments — from rocket payloads to tunnel boring machines and
+        experimental drone structures.
+      </p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn">View my projects</a>
+        <a href="Jack_Liedel_Resume.pdf" class="btn btn-outline" target="_blank" rel="noopener">
+          View résumé (PDF)
+        </a>
       </div>
-      <div>
-        <!-- Placeholder avatar; swap for a real photo if you like -->
-        <div class="hero-photo" aria-label="Portrait placeholder">
-          <span>🚀</span>
-        </div>
+      <p class="hero-meta">
+        B.Eng. Mechanical Engineering (Honors), Vanderbilt University · Expected Graduation: May 2026<br />
+        GPA: 3.90 / 4.00 · Dean’s List (all semesters)<br />
+        Email: <a href="mailto:jack.liedel@vanderbilt.edu">jack.liedel@vanderbilt.edu</a>
+      </p>
+    </div>
+    <div>
+      <div class="hero-photo" aria-label="Portrait placeholder">
+        <span>🚀</span>
       </div>
     </div>
-  </header>
-
+  </div>
+</header>
+  
   <!-- About -->
   <section id="about">
     <div class="container">

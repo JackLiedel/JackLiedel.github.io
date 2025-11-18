@@ -5,18 +5,26 @@
   <title>VADL 25–26 – Rocket Vehicle & Payload Design | Jack Liedel</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-  body {
+  /* GLOBAL RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* LIGHT THEME MATCHING HOMEPAGE */
+body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   max-width: 1000px;
   margin: 0 auto;
   padding: 2rem 1.5rem 3rem;
   line-height: 1.6;
-  background: #0d1117;      /* same dark as homepage */
-  color: #e6edf3;
+  background: #ffffff;      /* white, like homepage */
+  color: #111827;           /* dark text, like homepage */
 }
 
 a {
-  color: #58a6ff;
+  color: #1d4ed8;           /* same blue vibe as homepage */
   text-decoration: none;
 }
 
@@ -28,40 +36,45 @@ a:hover {
   font-size: 0.9rem;
   margin-bottom: 1rem;
   display: inline-block;
-  color: #8b949e;
+  color: #4b5563;
 }
 
 h1 {
   font-size: 2rem;
   margin-bottom: 0.25rem;
-  color: #ffffff;
+  color: #111827;
 }
 
 h2 {
   font-size: 1.4rem;
   margin-top: 2rem;
   margin-bottom: 0.5rem;
-  color: #ffffff;
+  color: #111827;
 }
 
 h3 {
   font-size: 1.05rem;
-  margin-top: 1.25rem;
+  margin-top: 1.1rem;
   margin-bottom: 0.25rem;
-  color: #e6edf3;
+  color: #111827;
 }
 
 p {
   margin-bottom: 0.75rem;
-  color: #c9d1d9;
+  color: #111827;
 }
 
 .meta {
   font-size: 0.9rem;
-  color: #8b949e;
+  color: #6b7280;
   margin-bottom: 1rem;
 }
 
+.section-intro {
+  max-width: 70ch;
+}
+
+/* TAGS */
 .tag-row {
   margin-top: 0.5rem;
   display: flex;
@@ -73,15 +86,12 @@ p {
   font-size: 0.75rem;
   padding: 0.15rem 0.6rem;
   border-radius: 999px;
-  background: #30363d;
-  color: #e6edf3;
+  background: #f3f4f6;
+  color: #111827;
+  border: 1px solid #e5e7eb;
 }
 
-.section-intro {
-  max-width: 70ch;
-}
-
-/* Hero section (used on VADL 25–26) */
+/* HERO IMAGE (top CAD, etc.) */
 .hero-image-wrapper {
   margin: 2rem 0 1.5rem;
 }
@@ -92,29 +102,22 @@ p {
   gap: 1rem;
 }
 
-.hero-image-wrapper figure {
-  margin: 0;
-  background: #161b22;
-  border-radius: 0.9rem;
-  padding: 0.6rem;
-  border: 1px solid #30363d;
-  box-shadow: 0 10px 26px rgba(0,0,0,0.75);
-}
-
 .hero-image {
   width: 100%;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 18px rgba(15,23,42,0.08);
   display: block;
 }
 
 .hero-caption {
   font-size: 0.85rem;
-  color: #8b949e;
+  color: #6b7280;
   margin-top: 0.45rem;
   text-align: center;
 }
 
-/* Row labels (for strip-style pages) */
+/* ROW LABELS (for VADL 25–26 strips) */
 .row-section {
   margin-top: 2rem;
 }
@@ -123,11 +126,11 @@ p {
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: #8b949e;
+  color: #6b7280;
   margin-bottom: 0.15rem;
 }
 
-/* Horizontal strips (VADL 25–26) */
+/* HORIZONTAL IMAGE STRIPS */
 .image-strip {
   display: flex;
   gap: 0.9rem;
@@ -140,15 +143,15 @@ p {
   height: 6px;
 }
 .image-strip::-webkit-scrollbar-track {
-  background: #21262d;
+  background: #f3f4f6;
   border-radius: 999px;
 }
 .image-strip::-webkit-scrollbar-thumb {
-  background: #484f58;
+  background: #d1d5db;
   border-radius: 999px;
 }
 
-/* Grids (used on VADL 24–25 / others) */
+/* GRID LAYOUT (for pages like drone-arm) */
 .image-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -156,14 +159,14 @@ p {
   margin-top: 1rem;
 }
 
-/* Shared card styling */
+/* SHARED CARD STYLE FOR FIGURES */
 figure {
   margin: 0;
-  background: #161b22;
+  background: #ffffff;
   border-radius: 0.75rem;
   padding: 0.6rem;
-  border: 1px solid #30363d;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 18px rgba(15,23,42,0.06);
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
@@ -177,7 +180,7 @@ img {
 
 figcaption {
   font-size: 0.8rem;
-  color: #8b949e;
+  color: #4b5563;
 }
 
 @media (max-width: 640px) {

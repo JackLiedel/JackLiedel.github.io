@@ -117,59 +117,31 @@ p {
   text-align: center;
 }
 
-/* ROW LABELS (for VADL 25–26 strips) */
+/* ROW SECTION WRAPPER */
 .row-section {
   margin-top: 2rem;
 }
 
-.row-label {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: #6b7280;
-  margin-bottom: 0.15rem;
-}
-
-/* HORIZONTAL IMAGE STRIPS */
-.image-strip {
-  display: flex;
-  gap: 0.9rem;
-  overflow-x: auto;
-  padding: 0.5rem 0 0.2rem;
-  scrollbar-width: thin;
-}
-
-.image-strip::-webkit-scrollbar {
-  height: 6px;
-}
-.image-strip::-webkit-scrollbar-track {
-  background: #f3f4f6;
-  border-radius: 999px;
-}
-.image-strip::-webkit-scrollbar-thumb {
-  background: #d1d5db;
-  border-radius: 999px;
-}
-
-/* GRID LAYOUT (for pages like drone-arm) */
-.image-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 1rem;
+/* PINTEREST-STYLE IMAGE FEED */
+.image-feed {
+  column-count: 3;
+  column-gap: 1rem;
   margin-top: 1rem;
 }
 
 /* SHARED CARD STYLE FOR FIGURES */
 figure {
-  margin: 0;
+  margin: 0 0 1rem;
   background: #ffffff;
   border-radius: 0.75rem;
   padding: 0.6rem;
   border: 1px solid #e5e7eb;
   box-shadow: 0 6px 18px rgba(15,23,42,0.06);
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
+  display: inline-block;
+  width: 100%;
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
 }
 
 img {
@@ -183,9 +155,18 @@ figcaption {
   color: #4b5563;
 }
 
+@media (max-width: 900px) {
+  .image-feed {
+    column-count: 2;
+  }
+}
+
 @media (max-width: 640px) {
   body {
     padding-inline: 1.1rem;
+  }
+  .image-feed {
+    column-count: 1;
   }
 }
   </style>
@@ -199,7 +180,8 @@ figcaption {
       Vanderbilt Aerospace Design Lab (Rocket Team) · Mechanical Design, Integration & Testing
     </div>
     <p class="section-intro">
-      The team will launch a full-scale vehicle and, using an apogee control system, achieve a controlled apogee of 4,500 ft AGL. The rocket will recover via dual-deployment—drogue at apogee and main at ≥ 500 ft AGL—so all sections land safely and are ready to re-launch without repair. After touchdown, the tail-mounted HAUS payload will autonomously acquire ≥ 50 mL of soil with a rotating shovel and analyze the retained sample for required metrics (e.g., nitrate-nitrogen, pH, electrical conductivity) within 15 minutes, with results recorded for post-flight reporting.    </p>
+      The team will launch a full-scale vehicle and, using an apogee control system, achieve a controlled apogee of 4,500 ft AGL. The rocket will recover via dual-deployment—drogue at apogee and main at ≥ 500 ft AGL—so all sections land safely and are ready to re-launch without repair. After touchdown, the tail-mounted HAUS payload will autonomously acquire ≥ 50 mL of soil with a rotating shovel and analyze the retained sample for required metrics (e.g., nitrate-nitrogen, pH, electrical conductivity) within 15 minutes, with results recorded for post-flight reporting.
+    </p>
     <div class="tag-row">
       <span class="tag">Mechanical Design</span>
       <span class="tag">SolidWorks</span>
@@ -209,51 +191,50 @@ figcaption {
 
     <!-- TOP: fullscale + subscale rocket CAD -->
     <div class="hero-image-wrapper">
-  <div class="hero-image-grid">
-    <figure>
-      <!-- FULLSCALE CAD -->
-      <img src="images/fullscale.png" alt="Fullscale rocket CAD" class="hero-image">
-      <figcaption class="hero-caption">
-        Fullscale rocket CAD model for the VADL 25–26 vehicle.
-      </figcaption>
-    </figure>
-    <figure>
-      <!-- SUBSCALE CAD (update filename once you upload it) -->
-      <img src="images/subscale.png" alt="Subscale rocket CAD" class="hero-image">
-      <figcaption class="hero-caption">
-        Subscale rocket CAD used for early validation and testing.
-      </figcaption>
-    </figure>
-  </div>
-</div>  </header>
+      <div class="hero-image-grid">
+        <figure>
+          <!-- FULLSCALE CAD -->
+          <img src="images/fullscale.png" alt="Fullscale rocket CAD" class="hero-image">
+          <figcaption class="hero-caption">
+            Fullscale rocket CAD model for the VADL 25–26 vehicle.
+          </figcaption>
+        </figure>
+        <figure>
+          <!-- SUBSCALE CAD -->
+          <img src="images/subscale.png" alt="Subscale rocket CAD" class="hero-image">
+          <figcaption class="hero-caption">
+            Subscale rocket CAD used for early validation and testing.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
 
-  <!-- ROW 1: Vehicle Design -->
+  <!-- SINGLE GALLERY SECTION: ALL IMAGES FROM ORIGINAL ROW 1 -->
   <section class="row-section">
-    <div class="row-label">Row 1</div>
-    <h2>Vehicle Design</h2>
+    <h2>Gallery</h2>
     <p class="section-intro">
-      Bulkplates, recovery bay layout, fincan, boat tail, LDM airframe, and nosecone. This strip shows
-      representative CAD and drawings for the 25–26 vehicle.
+      A visual overview of bulkplates, recovery bay layout, fincan, boat tail, leg deployment mechanisms,
+      avionics, payload systems, and testing setups for the 25–26 vehicle.
     </p>
 
-    <div class="image-strip">
-      <!-- 👉 Swap filenames to whatever images best represent vehicle CAD/drawings -->
+    <div class="image-feed">
       <figure>
         <img src="images/Bulkplate Drawing 1.png" alt="Bulkplate CAD / drawing">
         <figcaption>Bulkplate CAD and detailed drawing for nosecone coupling.</figcaption>
       </figure>
       
-       <figure>
+      <figure>
         <img src="images/Bulkplate Drawing 2.png" alt="Bulkplate CAD / drawing">
         <figcaption>Bulkplate CAD and detailed drawing for ____.</figcaption>
       </figure>
 
-        <figure>
+      <figure>
         <img src="images/Bulkplate Drawing 3.png" alt="Bulkplate CAD / drawing">
         <figcaption>Bulkplate CAD and detailed drawing for ____.</figcaption>
       </figure>
 
-        <figure>
+      <figure>
         <img src="images/Bulkplate Drawing 4.png" alt="Bulkplate CAD / drawing">
         <figcaption>Bulkplate CAD and detailed drawing for ____.</figcaption>
       </figure>
@@ -264,308 +245,178 @@ figcaption {
       </figure>
 
       <figure>
-        <img src="images/Recovery Section.png">
+        <img src="images/Recovery Section.png" alt="Recovery section">
         <figcaption>Recovery Section.</figcaption>
       </figure>
       
       <figure>
-        <img src="images/Main Bay Airframe.png">
+        <img src="images/Main Bay Airframe.png" alt="Main bay airframe and drawing for Fullscale">
         <figcaption>Main bay airframe and drawing for Fullscale.</figcaption>
       </figure>
 
       <figure>
-        <img src="images/Fin Can.png">
+        <img src="images/Fin Can.png" alt="Fin can exploded view">
         <figcaption>Fin Can Exploded View.</figcaption>
       </figure>
       
       <figure>
-        <img src="images/Boat Tail.png">
+        <img src="images/Boat Tail.png" alt="Boat Tail">
         <figcaption>Boat Tail.</figcaption>
       </figure>
       
       <figure>
-        <img src="images/LDM Bay.png">
+        <img src="images/LDM Bay.png" alt="Leg Deployment Mechanism bay">
         <figcaption>Leg Deployment Mechanism.</figcaption>
       </figure>
       
       <figure>
-        <img src="images/Fin Can.png">
+        <img src="images/Fin Can.png" alt="Fin can exploded view">
         <figcaption>Fin Can Exploded View.</figcaption>
       </figure>
       
       <figure>
-        <img src="images/Nosecone.png">
+        <img src="images/Nosecone.png" alt="Nosecone">
         <figcaption>Nosecone.</figcaption>
       </figure>
       
       <figure>
-        <img src="images/Nosecone Subscale.png">
+        <img src="images/Nosecone Subscale.png" alt="Subscale nosecone">
         <figcaption>Nosecone Subscale.</figcaption>
       </figure>
 
-      
       <figure>
-        <img src="images/RBS Assembly Exploded View Active.png">
+        <img src="images/RBS Assembly Exploded View Active.png" alt="RBS assembly exploded view active">
         <figcaption>RBS Assembly.</figcaption>
       </figure>
 
-      
       <figure>
-        <img src="images/RBS Assembly Active.png">
+        <img src="images/RBS Assembly Active.png" alt="RBS assembly active">
         <figcaption>RBS Assembly Active.</figcaption>
       </figure>
 
-      
       <figure>
-        <img src="images/Passive Cup FEA.png">
-        <figcaption>Passive CUp FEA.</figcaption>
+        <img src="images/Passive Cup FEA.png" alt="Passive cup FEA">
+        <figcaption>Passive Cup FEA.</figcaption>
       </figure>
 
-      
       <figure>
-        <img src="images/RBS Assembly Exploded View Passive.png">
+        <img src="images/RBS Assembly Exploded View Passive.png" alt="RBS assembly exploded view passive">
         <figcaption>RBS Assembly.</figcaption>
       </figure>
       
       <figure>
-        <img src="images/RBS Assembly Passive.png">
+        <img src="images/RBS Assembly Passive.png" alt="RBS assembly passive">
         <figcaption>RBS Assembly Passive.</figcaption>
       </figure>
 
-      
       <figure>
-        <img src="images/LDM Assembly.png">
+        <img src="images/LDM Assembly.png" alt="LDM assembly">
         <figcaption>LDM Assembly.</figcaption>
       </figure>
       
       <figure>
-        <img src="images/LDM Assembly Steps.png">
+        <img src="images/LDM Assembly Steps.png" alt="LDM assembly steps">
         <figcaption>LDM Assembly Steps.</figcaption>
       </figure>
       
       <figure>
-        <img src="images/LDM Assembly Weld.png">
+        <img src="images/LDM Assembly Weld.png" alt="LDM assembly weld">
         <figcaption>LDM Assembly Weld.</figcaption>
       </figure>
       
       <figure>
-        <img src="images/PDS Assembly Steps.png">
+        <img src="images/PDS Assembly Steps.png" alt="PDS assembly steps">
         <figcaption>PDS Assembly Steps.</figcaption>
       </figure>
 
       <figure>
-        <img src="images/PDS Assembly.png">
+        <img src="images/PDS Assembly.png" alt="PDS assembly">
         <figcaption>PDS Assembly.</figcaption>
       </figure>
       
       <figure>
-        <img src="images/Payload Opening.gif">
+        <img src="images/Payload Opening.gif" alt="Payload opening animation">
         <figcaption>Payload Opening.</figcaption>
       </figure>
       
       <figure>
-        <img src="images/LDM Drogue.png">
+        <img src="images/LDM Drogue.png" alt="LDM drogue">
         <figcaption>LDM Drogue.</figcaption>
       </figure>
       
       <figure>
-        <img src="images/Subscale PDM.png">
+        <img src="images/Subscale PDM.png" alt="Subscale PDM">
         <figcaption>Subscale PDM.</figcaption>
       </figure>
       
       <figure>
-        <img src="images/Subscale PDM steps.png">
+        <img src="images/Subscale PDM steps.png" alt="Subscale PDM steps">
         <figcaption>Subscale PDM steps.</figcaption>
       </figure>
 
-      
       <figure>
-        <img src="images/Avionics Bay.png">
+        <img src="images/Avionics Bay.png" alt="Avionics bay">
         <figcaption>Avionics Bay.</figcaption>
       </figure>
       
       <figure>
-        <img src="images/Soil Housing Chamber.png">
+        <img src="images/Soil Housing Chamber.png" alt="Soil housing chamber">
         <figcaption>Soil Housing Chamber.</figcaption>
       </figure>
       
       <figure>
-        <img src="images/Subscale PDM Assembled.png">
+        <img src="images/Subscale PDM Assembled.png" alt="Subscale PDM assembly">
         <figcaption>Subscale PDM Assembly.</figcaption>
       </figure>
       
       <figure>
-        <img src="images/Nosecone AS.png">
+        <img src="images/Nosecone AS.png" alt="Assembled nosecone">
         <figcaption>Assembled Nosecone.</figcaption>
       </figure>
       
       <figure>
-        <img src="images/Subscale Coupler.png">
+        <img src="images/Subscale Coupler.png" alt="Manufactured subscale coupler">
         <figcaption>Manufactured Subscale Coupler.</figcaption>
       </figure>
       
       <figure>
-        <img src="images/Bulkplate Subscale AS.png">
+        <img src="images/Bulkplate Subscale AS.png" alt="Bulkplate subscale assembly">
         <figcaption>Bulkplate Subscale Assembly.</figcaption>
       </figure>
       
       <figure>
-        <img src="images/Tail Can AS.png">
+        <img src="images/Tail Can AS.png" alt="Tail can assembly process">
         <figcaption>Tail Can Assembly Process.</figcaption>
       </figure>
       
       <figure>
-        <img src="images/Tail Can Manufacturing.png">
+        <img src="images/Tail Can Manufacturing.png" alt="Tail can manufacturing">
         <figcaption>Tail Can Manufacturing.</figcaption>
       </figure>
       
       <figure>
-        <img src="images/Drop Test Cad.png">
+        <img src="images/Drop Test Cad.png" alt="Drop test CAD">
         <figcaption>Drop Test CAD.</figcaption>
       </figure>
       
       <figure>
-        <img src="images/Drop Test AS.png">
+        <img src="images/Drop Test AS.png" alt="Drop test assembly">
         <figcaption>Drop Test Assembly.</figcaption>
       </figure>
 
-      
       <figure>
-        <img src="images/Drop Test Day 1.png">
+        <img src="images/Drop Test Day 1.png" alt="Drop test day 1">
         <figcaption>Drop Test.</figcaption>
       </figure>
       
       <figure>
-        <img src="images/Drop Test Day 2.png">
+        <img src="images/Drop Test Day 2.png" alt="Drop test day 2">
         <figcaption>Drop Test.</figcaption>
       </figure>
       
       <figure>
-        <img src="images/Launch Rail Setup.png">
+        <img src="images/Launch Rail Setup.png" alt="Launch rail setup">
         <figcaption>Launch Rail Setup.</figcaption>
-      </figure>
-      
-      
-    </div>
-  </section>
-
-  <!-- ROW 2: Payload Design -->
-  <section class="row-section">
-    <div class="row-label">Row 2</div>
-    <h2>Payload Design</h2>
-    <p class="section-intro">
-      Rotating bulkplate, shovel extension, leg deployment, parachute detachment, avionics bay, and soil
-      chamber. This strip shows the core mechanisms and their assemblies.
-    </p>
-
-    <div class="image-strip">
-      <!-- Rotating bulkplate -->
-      <figure>
-        <img src="images/img_6_1.png" alt="Rotating bulkplate system CAD">
-        <figcaption>Rotating bulkplate system used to support payload deployment and routing.</figcaption>
-      </figure>
-      <figure>
-        <img src="images/img_6_2.png" alt="Rotating bulkplate assembly">
-        <figcaption>Assembly view of the rotating bulkplate and support structure.</figcaption>
-      </figure>
-
-      <!-- Shovel extension -->
-      <figure>
-        <img src="images/img_7_1.png" alt="Shovel extension mechanism CAD">
-        <figcaption>Shovel extension mechanism concept for soil interaction.</figcaption>
-      </figure>
-      <figure>
-        <img src="images/img_7_2.png" alt="Shovel extension detail">
-        <figcaption>Detail of shovel extension linkage, mounting, and travel.</figcaption>
-      </figure>
-
-      <!-- Leg deployment -->
-      <figure>
-        <img src="images/img_8_1.png" alt="Leg deployment system CAD">
-        <figcaption>Leg deployment system designed to actuate reliably after landing.</figcaption>
-      </figure>
-      <figure>
-        <img src="images/img_8_2.png" alt="Leg mechanism detail">
-        <figcaption>Close-up of leg hinges, stops, and hardware.</figcaption>
-      </figure>
-
-      <!-- Parachute detachment -->
-      <figure>
-        <img src="images/img_9_1.png" alt="Parachute detachment mechanism CAD">
-        <figcaption>Parachute detachment mechanism integrated into the payload stack.</figcaption>
-      </figure>
-      <figure>
-        <img src="images/img_9_2.png" alt="Parachute detachment assembly drawing">
-        <figcaption>Assembly drawing showing routing and interfaces for detachment hardware.</figcaption>
-      </figure>
-
-      <!-- Avionics bay & soil chamber -->
-      <figure>
-        <img src="images/img_10_1.png" alt="Avionics bay CAD">
-        <figcaption>Avionics bay layout with boards, wiring paths, and mounting bosses.</figcaption>
-      </figure>
-      <figure>
-        <img src="images/img_11_2.png" alt="Soil chamber CAD">
-        <figcaption>Soil chamber geometry designed to capture and retain collected material.</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- ROW 3: Vehicle Manufacturing -->
-  <section class="row-section">
-    <div class="row-label">Row 3</div>
-    <h2>Vehicle Manufacturing</h2>
-    <p class="section-intro">
-      Subscale builds used to de-risk the fullscale vehicle, verify fit and integration, and practice
-      assembly and operations.
-    </p>
-
-    <div class="image-strip">
-      <figure>
-        <img src="images/img_15_1.png" alt="Subscale rocket build in lab">
-        <figcaption>Subscale rocket build in the lab to validate the vehicle design.</figcaption>
-      </figure>
-      <figure>
-        <img src="images/img_15_2.png" alt="Subscale vehicle on bench">
-        <figcaption>Subscale vehicle on the bench after integration of major components.</figcaption>
-      </figure>
-      <!-- Add more subscale / vehicle build photos here if you have them -->
-    </div>
-  </section>
-
-  <!-- ROW 4: Payload Manufacturing & Testing -->
-  <section class="row-section">
-    <div class="row-label">Row 4</div>
-    <h2>Payload Manufacturing & Testing</h2>
-    <p class="section-intro">
-      Manufacturing, assembly, and testing of payload hardware, including the drop test rig and deployment
-      tests.
-    </p>
-
-    <div class="image-strip">
-      <figure>
-        <img src="images/img_16_1.png" alt="Payload components after manufacturing">
-        <figcaption>Payload components post-machining/printing, prior to final assembly.</figcaption>
-      </figure>
-      <figure>
-        <img src="images/img_16_2.png" alt="Payload assembly on bench">
-        <figcaption>Payload assembly on the bench for integration and inspection.</figcaption>
-      </figure>
-      <figure>
-        <img src="images/img_16_3.png" alt="Drop test rig">
-        <figcaption>Drop test rig used to validate deployment and impact behavior.</figcaption>
-      </figure>
-      <figure>
-        <img src="images/img_16_4.png" alt="Payload test setup">
-        <figcaption>Payload test setup with instrumentation and safety constraints.</figcaption>
-      </figure>
-      <figure>
-        <img src="images/img_17_1.png" alt="Payload test in progress">
-        <figcaption>In-progress payload test showing dynamic behavior.</figcaption>
-      </figure>
-      <figure>
-        <img src="images/img_17_2.png" alt="Post-test inspection">
-        <figcaption>Post-test inspection of payload hardware after drop/deployment tests.</figcaption>
       </figure>
     </div>
   </section>

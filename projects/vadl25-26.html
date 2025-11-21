@@ -154,6 +154,34 @@ figcaption {
   font-size: 0.8rem;
   color: #4b5563;
 }
+.image-collection {
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  padding: 1.2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 18px rgba(15,23,42,0.06);
+  background: #fff;
+}
+
+.collection-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: #111827;
+}
+
+/* The existing Pinterest layout */
+.image-feed {
+  column-count: 3;
+  column-gap: 1rem;
+}
+
+@media (max-width: 900px) {
+  .image-feed { column-count: 2; }
+}
+@media (max-width: 640px) {
+  .image-feed { column-count: 1; }
+}
 
 @media (max-width: 900px) {
   .image-feed {
@@ -212,77 +240,95 @@ figcaption {
 
   <!-- SINGLE GALLERY SECTION: ALL IMAGES FROM ORIGINAL ROW 1 -->
   <section class="row-section">
-    <h2>Gallery</h2>
-    <p class="section-intro">
-      A visual overview of bulkplates, recovery bay layout, fincan, boat tail, leg deployment mechanisms,
-      avionics, payload systems, and testing setups for the 25–26 vehicle.
-    </p>
+  <h2>Gallery</h2>
+  <p class="section-intro">
+    A visual overview of bulkplates, recovery bay layout, fincan, boat tail, leg deployment mechanisms,
+    avionics, payload systems, and testing setups for the 25–26 vehicle.
+  </p>
 
-    <div class="image-feed">
-      <figure>
-        <img src="images/Bulkplate Drawing 1.png" alt="Bulkplate CAD / drawing">
-        <figcaption>Bulkplate CAD and detailed drawing for nosecone coupling.</figcaption>
-      </figure>
-      
-      <figure>
-        <img src="images/Bulkplate Drawing 2.png" alt="Bulkplate CAD / drawing">
-        <figcaption>Bulkplate CAD and detailed drawing for ____.</figcaption>
-      </figure>
+  <div class="gallery-wrapper">
+    <div class="image-collection">
+      <h3 class="collection-title">Structural Member Design</h3>
+      <div class="image-feed">
+        <figure>
+      <img src="images/Bulkplate Drawing 1.png">
+      <figcaption>Bulkplate CAD and detailed drawing for nosecone coupling.</figcaption>
+    </figure>
 
-      <figure>
-        <img src="images/Bulkplate Drawing 3.png" alt="Bulkplate CAD / drawing">
-        <figcaption>Bulkplate CAD and detailed drawing for ____.</figcaption>
-      </figure>
+    <figure>
+      <img src="images/Bulkplate Drawing 2.png">
+      <figcaption>Bulkplate CAD and detailed drawing for ____.</figcaption>
+    </figure>
 
-      <figure>
-        <img src="images/Bulkplate Drawing 4.png" alt="Bulkplate CAD / drawing">
-        <figcaption>Bulkplate CAD and detailed drawing for ____.</figcaption>
-      </figure>
+    <figure>
+      <img src="images/Bulkplate Drawing 3.png">
+      <figcaption>Bulkplate CAD and detailed drawing for ____.</figcaption>
+    </figure>
 
-      <figure>
-        <img src="images/Bulkplate Drawing 5.png" alt="Bulkplate CAD / drawing">
-        <figcaption>Bulkplate CAD and detailed drawing for ____.</figcaption>
-      </figure>
+    <figure>
+      <img src="images/Bulkplate Drawing 4.png">
+      <figcaption>Bulkplate CAD and detailed drawing for ____.</figcaption>
+    </figure>
 
-      <figure>
-        <img src="images/Recovery Section.png" alt="Recovery section">
-        <figcaption>Recovery Section.</figcaption>
-      </figure>
-      
+    <figure>
+      <img src="images/Bulkplate Drawing 5.png">
+      <figcaption>Bulkplate CAD and detailed drawing for ____.</figcaption>
+    </figure>
+      </div>
+    </div>
+
+    <!-- later you can add more .image-collection blocks
+         like "Drop Tests", "Avionics", etc. -->
+<h3 class="collection-title">Airframe Design</h3>
+      <div class="image-feed">
+        
+
       <figure>
         <img src="images/Main Bay Airframe.png" alt="Main bay airframe and drawing for Fullscale">
         <figcaption>Main bay airframe and drawing for Fullscale.</figcaption>
       </figure>
 
       <figure>
-        <img src="images/Fin Can.png" alt="Fin can exploded view">
-        <figcaption>Fin Can Exploded View.</figcaption>
-      </figure>
-      
-      <figure>
-        <img src="images/Boat Tail.png" alt="Boat Tail">
-        <figcaption>Boat Tail.</figcaption>
-      </figure>
-      
-      <figure>
         <img src="images/LDM Bay.png" alt="Leg Deployment Mechanism bay">
         <figcaption>Leg Deployment Mechanism.</figcaption>
       </figure>
-      
-      <figure>
-        <img src="images/Fin Can.png" alt="Fin can exploded view">
-        <figcaption>Fin Can Exploded View.</figcaption>
-      </figure>
-      
-      <figure>
-        <img src="images/Nosecone.png" alt="Nosecone">
-        <figcaption>Nosecone.</figcaption>
-      </figure>
-      
+
       <figure>
         <img src="images/Nosecone Subscale.png" alt="Subscale nosecone">
         <figcaption>Nosecone Subscale.</figcaption>
       </figure>
+
+      <figure>
+        <img src="images/Boat Tail.png" alt="Boat Tail">
+        <figcaption>Boat Tail.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/Nosecone.png" alt="Nosecone">
+        <figcaption>Nosecone.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/LDM Drogue.png" alt="LDM drogue">
+        <figcaption>LDM Drogue.</figcaption>
+      </figure>
+        
+    </div>
+
+
+    
+<h3 class="collection-title">Subsystem Design </h3>
+      <div class="image-feed">
+      <figure>
+        <img src="images/Fin Can.png" alt="Fin can exploded view">
+        <figcaption>Fin Can Exploded View.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/RBS Assembly Active.png" alt="RBS assembly active">
+        <figcaption>RBS Assembly Active.</figcaption>
+      </figure>
+        
 
       <figure>
         <img src="images/RBS Assembly Exploded View Active.png" alt="RBS assembly exploded view active">
@@ -290,9 +336,15 @@ figcaption {
       </figure>
 
       <figure>
-        <img src="images/RBS Assembly Active.png" alt="RBS assembly active">
-        <figcaption>RBS Assembly Active.</figcaption>
+        <img src="images/RBS Assembly Passive.png" alt="RBS assembly passive">
+        <figcaption>RBS Assembly Passive.</figcaption>
       </figure>
+
+      <figure>
+        <img src="images/RBS Assembly Exploded View Passive.png" alt="RBS assembly exploded view passive">
+        <figcaption>RBS Assembly.</figcaption>
+      </figure>
+
 
       <figure>
         <img src="images/Passive Cup FEA.png" alt="Passive cup FEA">
@@ -300,30 +352,26 @@ figcaption {
       </figure>
 
       <figure>
-        <img src="images/RBS Assembly Exploded View Passive.png" alt="RBS assembly exploded view passive">
-        <figcaption>RBS Assembly.</figcaption>
-      </figure>
-      
-      <figure>
-        <img src="images/RBS Assembly Passive.png" alt="RBS assembly passive">
-        <figcaption>RBS Assembly Passive.</figcaption>
+        <img src="images/Soil Housing Chamber.png" alt="Soil housing chamber">
+        <figcaption>Soil Housing Chamber.</figcaption>
       </figure>
 
+              
       <figure>
         <img src="images/LDM Assembly.png" alt="LDM assembly">
         <figcaption>LDM Assembly.</figcaption>
       </figure>
-      
+
       <figure>
         <img src="images/LDM Assembly Steps.png" alt="LDM assembly steps">
         <figcaption>LDM Assembly Steps.</figcaption>
       </figure>
-      
+        
       <figure>
         <img src="images/LDM Assembly Weld.png" alt="LDM assembly weld">
         <figcaption>LDM Assembly Weld.</figcaption>
       </figure>
-      
+
       <figure>
         <img src="images/PDS Assembly Steps.png" alt="PDS assembly steps">
         <figcaption>PDS Assembly Steps.</figcaption>
@@ -333,93 +381,108 @@ figcaption {
         <img src="images/PDS Assembly.png" alt="PDS assembly">
         <figcaption>PDS Assembly.</figcaption>
       </figure>
-      
-      <figure>
-        <img src="images/Payload Opening.gif" alt="Payload opening animation">
-        <figcaption>Payload Opening.</figcaption>
-      </figure>
-      
-      <figure>
-        <img src="images/LDM Drogue.png" alt="LDM drogue">
-        <figcaption>LDM Drogue.</figcaption>
-      </figure>
-      
+
       <figure>
         <img src="images/Subscale PDM.png" alt="Subscale PDM">
         <figcaption>Subscale PDM.</figcaption>
       </figure>
-      
+
       <figure>
         <img src="images/Subscale PDM steps.png" alt="Subscale PDM steps">
         <figcaption>Subscale PDM steps.</figcaption>
       </figure>
+        
 
+      <figure>
+        <img src="images/Payload Opening.gif" alt="Payload opening animation">
+        <figcaption>Payload Opening.</figcaption>
+      </figure>
+
+        
+        
+        </div>
+    
+<h3 class="collection-title">Recovery Design </h3>
+      <div class="image-feed">
+        
       <figure>
         <img src="images/Avionics Bay.png" alt="Avionics bay">
         <figcaption>Avionics Bay.</figcaption>
       </figure>
-      
+
       <figure>
-        <img src="images/Soil Housing Chamber.png" alt="Soil housing chamber">
-        <figcaption>Soil Housing Chamber.</figcaption>
+        <img src="images/Recovery Section.png" alt="Recovery section">
+        <figcaption>Recovery Section.</figcaption>
       </figure>
-      
+        
+        
+        </div>
+    
+<h3 class="collection-title">Manufacturing </h3>
+      <div class="image-feed">
+
       <figure>
         <img src="images/Subscale PDM Assembled.png" alt="Subscale PDM assembly">
         <figcaption>Subscale PDM Assembly.</figcaption>
       </figure>
-      
+
       <figure>
         <img src="images/Nosecone AS.png" alt="Assembled nosecone">
         <figcaption>Assembled Nosecone.</figcaption>
       </figure>
-      
+
       <figure>
         <img src="images/Subscale Coupler.png" alt="Manufactured subscale coupler">
         <figcaption>Manufactured Subscale Coupler.</figcaption>
       </figure>
-      
+
       <figure>
         <img src="images/Bulkplate Subscale AS.png" alt="Bulkplate subscale assembly">
         <figcaption>Bulkplate Subscale Assembly.</figcaption>
       </figure>
-      
+
       <figure>
         <img src="images/Tail Can AS.png" alt="Tail can assembly process">
         <figcaption>Tail Can Assembly Process.</figcaption>
       </figure>
-      
+
       <figure>
         <img src="images/Tail Can Manufacturing.png" alt="Tail can manufacturing">
         <figcaption>Tail Can Manufacturing.</figcaption>
       </figure>
       
+
+        
+        </div>
+
+<h3 class="collection-title">Drop Test Design and Testing </h3>
+      <div class="image-feed">
+
       <figure>
         <img src="images/Drop Test Cad.png" alt="Drop test CAD">
         <figcaption>Drop Test CAD.</figcaption>
       </figure>
-      
+
       <figure>
         <img src="images/Drop Test AS.png" alt="Drop test assembly">
         <figcaption>Drop Test Assembly.</figcaption>
       </figure>
-
+        
       <figure>
         <img src="images/Drop Test Day 1.png" alt="Drop test day 1">
         <figcaption>Drop Test.</figcaption>
       </figure>
-      
-      <figure>
-        <img src="images/Drop Test Day 2.png" alt="Drop test day 2">
-        <figcaption>Drop Test.</figcaption>
-      </figure>
-      
+
       <figure>
         <img src="images/Launch Rail Setup.png" alt="Launch rail setup">
         <figcaption>Launch Rail Setup.</figcaption>
       </figure>
-    </div>
-  </section>
+      
+        
+        </div>
+        
+  </div>
+</section>
 
 </body>
 </html>

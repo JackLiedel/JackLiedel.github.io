@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VADL 25–26 – Rocket Vehicle & Payload Design | Jack Liedel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  /* GLOBAL RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* LIGHT THEME MATCHING HOMEPAGE */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+  line-height: 1.6;
+  background: #ffffff;      /* white, like homepage */
+  color: #111827;           /* dark text, like homepage */
+}
+
+a {
+  color: #1d4ed8;           /* same blue vibe as homepage */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.back-link {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+  color: #4b5563;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+  color: #111827;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  color: #111827;
+}
+
+h3 {
+  font-size: 1.05rem;
+  margin-top: 1.1rem;
+  margin-bottom: 0.25rem;
+  color: #111827;
+}
+
+p {
+  margin-bottom: 0.75rem;
+  color: #111827;
+}
+
+.meta {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+.section-intro {
+  max-width: 70ch;
+}
+
+/* TAGS */
+.tag-row {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tag {
+  font-size: 0.75rem;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  background: #f3f4f6;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+}
+
+/* HERO IMAGE (top CAD, etc.) */
+.hero-image-wrapper {
+  margin: 2rem 0 1.5rem;
+}
+
+.hero-image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.hero-image {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 18px rgba(15,23,42,0.08);
+  display: block;
+}
+
+.hero-caption {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-top: 0.45rem;
+  text-align: center;
+}
+
+/* ROW SECTION WRAPPER */
+.row-section {
+  margin-top: 2rem;
+}
+
+/* PINTEREST-STYLE IMAGE FEED */
+/* PINTEREST-STYLE IMAGE FEED */
+.image-feed {
+  column-count: 3;
+  column-gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* IMAGE COLLECTION / GROUP BLOCKS */
+.image-collection {
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  padding: 1.2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 18px rgba(15,23,42,0.06);
+  background: #fff;
+}
+
+.collection-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: #111827;
+}
+
+/* SHARED CARD STYLE FOR FIGURES (keep as you have it) */
+figure {
+  margin: 0 0 1rem;
+  background: #ffffff;
+  border-radius: 0.75rem;
+  padding: 0.6rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 18px rgba(15,23,42,0.06);
+  display: inline-block;
+  width: 100%;
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+}
+
+img {
+  width: 100%;
+  border-radius: 0.5rem;
+  display: block;
+}
+
+figcaption {
+  font-size: 0.8rem;
+  color: #4b5563;
+}
+
+/* OPTIONAL: layout for all collections together */
+.gallery-wrapper {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* RESPONSIVE COLUMNS */
+@media (max-width: 900px) {
+  .image-feed { column-count: 2; }
+}
+
+@media (max-width: 640px) {
+  body { padding-inline: 1.1rem; }
+  .image-feed { column-count: 1; }
+}
+
+  </style>
+</head>
+<body>
+  <a class="back-link" href="index.html">← Back to main portfolio</a>
+
+  <header>
+    <h1>VADL 24–25 · Vehicle & Payload Design</h1>
+    <div class="meta">
+      Vanderbilt Aerospace Design Lab (Rocket Team) · Mechanical Design, Integration & Testing
+    </div>
+    <p class="section-intro">
+      The team will launch a full-scale vehicle and, using an apogee control system, achieve a controlled apogee of 4,500 ft AGL. The rocket will recover via dual-deployment—drogue at apogee and main at ≥ 500 ft AGL—so all sections land safely and are ready to re-launch without repair. After touchdown, the tail-mounted HAUS payload will autonomously acquire ≥ 50 mL of soil with a rotating shovel and analyze the retained sample for required metrics (e.g., nitrate-nitrogen, pH, electrical conductivity) within 15 minutes, with results recorded for post-flight reporting.
+    </p>
+    <div class="tag-row">
+      <span class="tag">Mechanical Design</span>
+      <span class="tag">SolidWorks</span>
+      <span class="tag">CNC &amp; 3D Printing</span>
+      <span class="tag">Systems Integration</span>
+    </div>
+
+    <!-- TOP: fullscale + subscale rocket CAD -->
+    <div class="hero-image-wrapper">
+      <div class="hero-image-grid">
+        <figure>
+          <!-- FULLSCALE CAD -->
+          <img src="images/fullscale.png" alt="Fullscale rocket CAD" class="hero-image">
+          <figcaption class="hero-caption">
+            Fullscale rocket CAD model for the VADL 24–25 vehicle.
+          </figcaption>
+        </figure>
+        <figure>
+          <!-- SUBSCALE CAD -->
+          <img src="images/subscale.png" alt="Subscale rocket CAD" class="hero-image">
+          <figcaption class="hero-caption">
+            Subscale rocket CAD used for early validation and testing.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <!-- SINGLE GALLERY SECTION: ALL IMAGES FROM ORIGINAL ROW 1 -->
+  <section class="row-section">
+  <h2>Gallery</h2>
+  <p class="section-intro">
+    A visual overview of bulkplates, recovery bay layout, fincan, boat tail, leg deployment mechanisms,
+    avionics, payload systems, and testing setups for the 24–25 vehicle.
+  </p>
+
+  <div class="gallery-wrapper">
+    <div class="image-collection">
+      <h3 class="collection-title">Structural Member Design</h3>
+      <div class="image-feed">
+        <figure>
+      <img src="images/Bulkplate Drawing 1.png">
+      <figcaption>Bulkplate CAD and detailed drawing for nosecone coupling.</figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/Bulkplate Drawing 2.png">
+      <figcaption>Bulkplate CAD and detailed drawing for ____.</figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/Bulkplate Drawing 3.png">
+      <figcaption>Bulkplate CAD and detailed drawing for ____.</figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/Bulkplate Drawing 4.png">
+      <figcaption>Bulkplate CAD and detailed drawing for ____.</figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/Bulkplate Drawing 5.png">
+      <figcaption>Bulkplate CAD and detailed drawing for ____.</figcaption>
+    </figure>
+      </div>
+    </div>
+
+    <!-- later you can add more .image-collection blocks
+         like "Drop Tests", "Avionics", etc. -->
+
+<div class="image-collection">
+<h3 class="collection-title">Airframe Design</h3>
+      <div class="image-feed">
+        
+
+      <figure>
+        <img src="images/Main Bay Airframe.png" alt="Main bay airframe and drawing for Fullscale">
+        <figcaption>Main bay airframe and drawing for Fullscale.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/LDM Bay.png" alt="Leg Deployment Mechanism bay">
+        <figcaption>Leg Deployment Mechanism.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/Nosecone Subscale.png" alt="Subscale nosecone">
+        <figcaption>Nosecone Subscale.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/Boat Tail.png" alt="Boat Tail">
+        <figcaption>Boat Tail.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/Nosecone .png" alt="Nosecone">
+        <figcaption>Nosecone.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/LDM Drogue .png" alt="LDM drogue">
+        <figcaption>LDM Drogue.</figcaption>
+      </figure>
+        
+    </div>
+</div>
+
+<div class="image-collection">    
+<h3 class="collection-title">Subsystem Design </h3>
+      <div class="image-feed">
+      <figure>
+        <img src="images/Fin Can.png" alt="Fin can exploded view">
+        <figcaption>Fin Can Exploded View.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/RBS Assembly Active.png" alt="RBS assembly active">
+        <figcaption>RBS Assembly Active.</figcaption>
+      </figure>
+        
+
+      <figure>
+        <img src="images/RBS Assembly Exploded View Active.png" alt="RBS assembly exploded view active">
+        <figcaption>RBS Assembly.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/RBS Assembly Passive.png" alt="RBS assembly passive">
+        <figcaption>RBS Assembly Passive.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/RBS Assembly Exploded View Passive.png" alt="RBS assembly exploded view passive">
+        <figcaption>RBS Assembly.</figcaption>
+      </figure>
+
+
+      <figure>
+        <img src="images/Passive Cup FEA .png" alt="Passive cup FEA">
+        <figcaption>Passive Cup FEA.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/Soil Housing Chamber.png" alt="Soil housing chamber">
+        <figcaption>Soil Housing Chamber.</figcaption>
+      </figure>
+      
+      <figure>
+        <img src="images/LDM Assmebly.png" alt="LDM assembly">
+        <figcaption>LDM Assembly.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/LDM Assembly Steps.png" alt="LDM assembly steps">
+        <figcaption>LDM Assembly Steps.</figcaption>
+      </figure>
+        
+      <figure>
+        <img src="images/LDM Assembly Weld.png" alt="LDM assembly weld">
+        <figcaption>LDM Assembly Weld.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/PDS Assembly Steps.png" alt="PDS assembly steps">
+        <figcaption>PDS Assembly Steps.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/PDS Assembly.png" alt="PDS assembly">
+        <figcaption>PDS Assembly.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/Subscale PDM .png" alt="Subscale PDM">
+        <figcaption>Subscale PDM.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/Subscale PDM steps.png" alt="Subscale PDM steps">
+        <figcaption>Subscale PDM steps.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/Payload Opening.gif" alt="Payload opening animation">
+        <figcaption>Payload Opening.</figcaption>
+      </figure>
+
+        
+        
+        </div>
+</div>
+
+    
+<div class="image-collection">
+<h3 class="collection-title">Recovery Design </h3>
+      <div class="image-feed">
+        
+      <figure>
+        <img src="images/Avionics Bay.png" alt="Avionics bay">
+        <figcaption>Avionics Bay.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/Recovery Section.png" alt="Recovery section">
+        <figcaption>Recovery Section.</figcaption>
+      </figure>
+        
+        
+        </div>
+</div>
+
+
+<div class="image-collection">    
+<h3 class="collection-title">Manufacturing </h3>
+      <div class="image-feed">
+
+      <figure>
+        <img src="images/Subscale PDM Assembled.png" alt="Subscale PDM assembly">
+        <figcaption>Subscale PDM Assembly.</figcaption>
+      </figure>
+  <figure>
+      <img src="images/Completed PDS with Electronics.jpeg">
+      <figcaption>Completed PDS with Electronics.</figcaption>
+    </figure>
+      <figure>
+        <img src="images/Nosecone AS.png" alt="Assembled nosecone">
+        <figcaption>Assembled Nosecone.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/Subscale Coupler .png" alt="Manufactured subscale coupler">
+        <figcaption>Manufactured Subscale Coupler.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/Bulkplate Subscale AS.png" alt="Bulkplate subscale assembly">
+        <figcaption>Bulkplate Subscale Assembly.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/Tail Can AS.png" alt="Tail can assembly process">
+        <figcaption>Tail Can Assembly Process.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/Tail Can Manufacturing.png" alt="Tail can manufacturing">
+        <figcaption>Tail Can Manufacturing.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/Subscale 1.jpg">
+        <figcaption>Completed Subscale.</figcaption>
+      </figure>
+        
+      <figure>
+        <img src="images/Subscale 2.jpg">
+        <figcaption>Completed Subscale.</figcaption>
+      </figure>
+
+        <figure>
+        <img src="images/Subscale 3.jpg">
+        <figcaption>Completed Subscale.</figcaption>
+      </figure>
+      
+        
+        </div>
+</div>
+
+<div class="image-collection">
+<h3 class="collection-title">Drop Test Design and Testing </h3>
+      <div class="image-feed">
+
+      <figure>
+        <img src="images/Drop Test Cad.png" alt="Drop test CAD">
+        <figcaption>Drop Test CAD.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/Drop Test AS.png" alt="Drop test assembly">
+        <figcaption>Drop Test Assembly.</figcaption>
+      </figure>
+        
+      <figure>
+        <img src="images/Drop Test Day 1.png" alt="Drop test day 1">
+        <figcaption>Drop Test.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/Launch Rail Setup.png" alt="Launch rail setup">
+        <figcaption>Launch Rail Setup.</figcaption>
+      </figure>
+
+<figure>
+  <video controls playsinline style="width: 100%; border-radius: 0.5rem;">
+    <source src="images/Payload Test.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <figcaption>Payload functionality testing.</figcaption>
+</figure>
+
+
+        
+        </div>
+</div>
+        
+  </div>
+</section>
+
+</body>
+</html>

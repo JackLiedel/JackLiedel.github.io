@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mechatronics Landing Detection System | Jack Liedel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    /* GLOBAL RESET */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* LIGHT THEME MATCHING HOMEPAGE */
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+      line-height: 1.6;
+      background: #ffffff;
+      color: #111827;
+    }
+
+    a {
+      color: #1d4ed8;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .back-link {
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+      color: #4b5563;
+    }
+
+    header {
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.25rem;
+      color: #111827;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+      color: #111827;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      margin-top: 1.1rem;
+      margin-bottom: 0.25rem;
+      color: #111827;
+    }
+
+    p {
+      margin-bottom: 0.75rem;
+      color: #111827;
+    }
+
+    ul {
+      margin: 0.25rem 0 0.75rem 1.25rem;
+      color: #111827;
+    }
+
+    .meta {
+      font-size: 0.9rem;
+      color: #6b7280;
+      margin-bottom: 1rem;
+    }
+
+    .section-intro {
+      max-width: 70ch;
+    }
+
+    /* TAGS */
+    .tag-row {
+      margin-top: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      background: #f3f4f6;
+      color: #111827;
+      border: 1px solid #e5e7eb;
+    }
+
+    /* HERO IMAGE */
+    .hero-image {
+      width: 100%;
+      border-radius: 0.9rem;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 10px 26px rgba(15,23,42,0.12);
+      display: block;
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    .hero-caption {
+      font-size: 0.85rem;
+      color: #6b7280;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    /* IMAGE GRID */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    /* FIGURE CARD STYLE */
+    figure {
+      margin: 0;
+      background: #ffffff;
+      border-radius: 0.75rem;
+      padding: 0.6rem;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 6px 18px rgba(15,23,42,0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 0.5rem;
+      display: block;
+    }
+
+    figcaption {
+      font-size: 0.8rem;
+      color: #4b5563;
+    }
+
+    /* DOWNLOAD CARD */
+    .download-section {
+      margin-top: 2.5rem;
+    }
+
+    .download-card {
+      margin-top: 0.75rem;
+      padding: 1rem 1.1rem;
+      border-radius: 0.9rem;
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+      box-shadow: 0 6px 18px rgba(15,23,42,0.05);
+    }
+
+    .download-title {
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+      color: #111827;
+    }
+
+    .download-text {
+      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
+      color: #4b5563;
+    }
+
+    .download-link {
+      font-size: 0.9rem;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      display: inline-block;
+      margin-right: 0.75rem;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding-inline: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="back-link" href="../index.html">← Back to main portfolio</a>
+
+  <header>
+    <h1>Landing Detection System for VADL Payload</h1>
+
+    <div class="meta">
+      Mechatronics Final Project · Vanderbilt Aerospace Design Lab (USLI Payload) · 2024
+    </div>
+
+    <p class="section-intro">
+      For this mechatronics project I designed and built a <strong>strain-based landing detection system</strong>
+      for the Vanderbilt Aerospace Design Lab (VADL) payload. The goal was to replace fragile timing-based
+      logic and unreliable embedded sensors with a robust, physics-based measurement of payload–ground
+      interaction at touchdown. [oai_citation:0‡FINAL PROJECT_ MECHATRONICS-JACK LIEDEL  (2).pdf](sediment://file_00000000c8b871f5aca98fd19744fa35)
+    </p>
+
+    <p class="section-intro">
+      The system uses a <strong>half-bridge strain gauge</strong> bonded to an aluminum landing leg, an
+      <strong>EMBSGB200 amplifier</strong>, and an <strong>Arduino R4 Uno</strong> to compute strain, landing
+      force, and peak G-loads in real time. When the measured G-load exceeds a threshold, the software
+      both logs the event and actuates a servo to deploy an RF antenna.
+    </p>
+
+    <div class="tag-row">
+      <span class="tag">Mechatronics</span>
+      <span class="tag">Strain Gauges</span>
+      <span class="tag">Arduino</span>
+      <span class="tag">Embedded C/C++</span>
+      <span class="tag">Experimental Testing</span>
+    </div>
+
+    <!-- Hero image – replace src with an actual photo or diagram -->
+    <img src="../images/mechatronics-hero.png"
+         alt="Prototype payload with strain gauge landing leg and electronics bay"
+         class="hero-image">
+    <div class="hero-caption">
+      Prototype payload with aluminum landing leg instrumented with a half-bridge strain gauge and onboard
+      mechatronics for landing detection.
+    </div>
+  </header>
+
+  <!-- System Overview -->
+  <section>
+    <h2>System Overview</h2>
+    <p class="section-intro">
+      VADL’s previous payload relied on timing logic and on-board accelerometers for landing detection,
+      which created the risk of <strong>premature mid-air parachute detachment</strong>. To mitigate that
+      failure mode, I proposed a system that senses landing directly through flexure of the payload’s landing
+      legs.
+    </p>
+    <p class="section-intro">
+      A 6061-T6 aluminum leg is instrumented with a half-bridge strain gauge circuit. The bridge output is
+      amplified, digitized by the Arduino, and converted into strain, tip force, and G-loads. When G-loads
+      exceed a programmable threshold (1.2&nbsp;G), the microcontroller declares landing, latches the peak value
+      to an LCD voltmeter, and triggers a servo-deployed RF antenna.
+    </p>
+  </section>
+
+  <!-- Hardware & Electronics -->
+  <section>
+    <h2>Hardware & Electronics</h2>
+    <p class="section-intro">
+      I built a complete <strong>prototype payload</strong> to avoid interfering with flight hardware while still
+      matching its geometry and loading paths. The design includes fiberglass airframe, green ABS bulkplates,
+      aluminum support rods, an ABS electronics bay, and a 6061 landing leg sized for measurable elastic
+      deflection.
+    </p>
+
+    <ul>
+      <li><strong>Landing leg:</strong> 6061 aluminum chosen for its lower modulus vs 7075, increasing measurable deflection.</li>
+      <li><strong>Half-bridge strain gauges:</strong> provide thermal compensation, higher sensitivity, and better noise rejection than a quarter bridge.</li>
+      <li><strong>EMBSGB200 amplifier:</strong> flight-proven hardware used in previous VADL missions, configured for high gain and low noise.</li>
+      <li><strong>Arduino R4 Uno:</strong> configured for ≈9&nbsp;kHz sampling to capture the short impulse at impact.</li>
+      <li><strong>LCD voltmeter:</strong> displays peak landing G-load via PWM output from the Arduino.</li>
+      <li><strong>MG90S servo + RF antenna:</strong> small, flight-heritage servo used to rotate a metallic antenna strip into transmit position.</li>
+    </ul>
+
+    <div class="image-grid">
+      <figure>
+        <img src="../images/mech-amp-bench.png" alt="Strain gauge amplifier and wiring on bench">
+        <figcaption>
+          EMBSGB200 strain gauge amplifier wired to the half-bridge and Arduino during early bench tests.
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="../images/mech-electronics-bay.png" alt="Electronics bay with Arduino and amplifier">
+        <figcaption>
+          ABS electronics bay housing the Arduino R4, amplifier, servo connections, and voltmeter wiring.
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="../images/mech-bulkplate-drawing.png" alt="Bulkplate CAD drawing">
+        <figcaption>
+          CAD drawing of the ABS bulkplates used to mount landing legs and tie into the fiberglass airframe.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Software & Control Logic -->
+  <section>
+    <h2>Software & Control Logic</h2>
+    <p class="section-intro">
+      The embedded software is written in Arduino C/C++ and builds on course concepts such as analog
+      sampling, PWM, servo control, and bridge-circuit strain calculations.
+    </p>
+
+    <ul>
+      <li>Continuously samples the amplified bridge voltage and converts it to microstrain using the gauge factor and bridge equations.</li>
+      <li>Maps strain to tip force and then to equivalent G-loads using beam theory and payload weight.</li>
+      <li>Tracks and stores the <strong>peak G-load</strong> observed during each impact event.</li>
+      <li>Declares landing when G exceeds 1.2&nbsp;G and allows several additional cycles to capture the true peak.</li>
+      <li>Commands the servo to 70° to deploy the RF antenna once landing is confirmed.</li>
+      <li>Outputs live G-load as a PWM-encoded voltage to the LCD voltmeter, then freezes at the peak value post-landing.</li>
+    </ul>
+  </section>
+
+  <!-- Manufacturing & Assembly -->
+  <section>
+    <h2>Mechanical Design, Manufacturing & Assembly</h2>
+    <p class="section-intro">
+      All structural components of the prototype payload were designed in CAD and manufactured in-house
+      using a mixture of 3D printing and shop tooling.
+    </p>
+
+    <ul>
+      <li>Bulkplates and electronics bay printed in ABS with integrated mounts for rods, legs, and electronics.</li>
+      <li>Fiberglass tube cut to length and bonded to bulkplates to reproduce flight-like geometry.</li>
+      <li>Strain gauges bonded and wired using precision 120&nbsp;Ω resistors to form the half-bridge.</li>
+      <li>Electronics bay assembled and wired for rapid swap of amplifiers, microcontrollers, and power.</li>
+    </ul>
+
+    <div class="image-grid">
+      <figure>
+        <img src="../images/mech-prototype-payload.png" alt="Assembled prototype payload">
+        <figcaption>
+          Completed prototype payload with fiberglass airframe, ABS bulkplates, and instrumented landing leg.
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="../images/mech-calibration-setup.png" alt="Calibration with known weights">
+        <figcaption>
+          Calibration setup: known weights applied to the leg while monitoring strain and voltage to derive the
+          force–voltage relationship.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Testing & Results -->
+  <section>
+    <h2>Testing & Results</h2>
+    <p class="section-intro">
+      I ran multiple drop-test campaigns to characterize the system response: horizontal drops for control,
+      30°-angle drops to mimic realistic landings, and repeated drops from fixed height to evaluate precision.
+    </p>
+
+    <ul>
+      <li>Earlier low-frequency code produced noisy correlations between drop height and G-load.</li>
+      <li>After optimizing sampling to ≈9&nbsp;kHz, drops from 0–40&nbsp;cm showed a strong linear relationship
+          (R² ≈ 0.995) between height and peak G’s, validating the strain-based model.</li>
+      <li>Saturation at higher heights was traced to the amplifier gain and 5&nbsp;V ADC limit, suggesting future
+          work with higher-range ADC hardware.</li>
+      <li>A histogram of repeated 1.2&nbsp;m drops revealed the expected spread in G-loads, driven largely by
+          impact dynamics and earlier lower sample rates.</li>
+    </ul>
+
+    <div class="image-grid">
+      <figure>
+        <img src="../images/mech-results-plot.png" alt="Max Gs vs drop height plot">
+        <figcaption>
+          Max G-load vs drop height showing a linear region before saturation due to ADC voltage limits.
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="../images/mech-test-setup.png" alt="Outdoor drop test setup">
+        <figcaption>
+          Outdoor test stand with ruler and foam pad used to standardize drop height and simulate soil/grass
+          landing conditions.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Impact & Future Work -->
+  <section>
+    <h2>Impact & Future Work</h2>
+    <p class="section-intro">
+      This project demonstrates a practical, flight-ready approach to landing detection that directly measures
+      leg flexure instead of relying on noisy accelerometers or timing logic. With minor modifications, the system
+      could be integrated into future VADL payloads to reduce the risk of premature parachute detachment.
+    </p>
+    <p class="section-intro">
+      Recommended next steps include integrating a higher-range external ADC, extending drop testing to a
+      wider height range, and porting the logic to a higher-resolution flight microcontroller to further improve
+      accuracy and robustness.
+    </p>
+  </section>
+
+  <!-- Report Download -->
+  <section class="download-section">
+    <h2>Full Mechatronics Report</h2>
+    <div class="download-card">
+      <div class="download-title">Landing Detection via Strain-Gauge Instrumented Landing Leg</div>
+      <p class="download-text">
+        Full mechatronics final report with system modeling, circuit design, embedded code, calibration
+        procedures, and experimental results.
+      </p>
+      <!-- Update href to the actual PDF path in your repo -->
+      <a class="download-link"
+         href="../reports/MECHATRONICS_LANDING_DETECTION_JACK_LIEDEL.pdf"
+         target="_blank"
+         rel="noopener">
+        Open Mechatronics Final Report (PDF)
+      </a>
+    </div>
+  </section>
+
+</body>
+</html>

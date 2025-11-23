@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Capping the Interstate – Steel Truss Cap | Jack Liedel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+        content="Manufacturing and design process for a steel truss prototype that caps the interstate and reconnects communities over Jefferson Street in Nashville.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 3.5rem;
+      line-height: 1.6;
+      background: #ffffff;
+      color: #111827;
+    }
+
+    a {
+      color: #1d4ed8;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .back-link {
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+      display: inline-block;
+      color: #4b5563;
+    }
+
+    header {
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.35rem;
+      color: #111827;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+      color: #111827;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      margin-top: 1.1rem;
+      margin-bottom: 0.25rem;
+      color: #111827;
+    }
+
+    p {
+      margin-bottom: 0.75rem;
+      color: #111827;
+    }
+
+    ul {
+      margin: 0.25rem 0 0.75rem 1.25rem;
+    }
+
+    .meta {
+      font-size: 0.9rem;
+      color: #6b7280;
+      margin-bottom: 1rem;
+    }
+
+    .section-intro {
+      max-width: 70ch;
+    }
+
+    .tag-row {
+      margin-top: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      background: #f3f4f6;
+      color: #111827;
+      border: 1px solid #e5e7eb;
+    }
+
+    /* Hero image */
+    .hero-image {
+      width: 100%;
+      border-radius: 0.9rem;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 10px 26px rgba(15,23,42,0.12);
+      display: block;
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    .hero-caption {
+      font-size: 0.85rem;
+      color: #6b7280;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Process cards */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+      margin-top: 0.75rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 0.9rem;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 6px 18px rgba(15,23,42,0.06);
+      padding: 1rem 1.1rem;
+    }
+
+    .card h3 {
+      margin-bottom: 0.35rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card ul {
+      font-size: 0.9rem;
+    }
+
+    /* Small image figures */
+    figure {
+      margin: 1rem 0;
+      text-align: center;
+    }
+
+    figure img {
+      max-width: 100%;
+      border-radius: 0.5rem;
+      border: 1px solid #e5e7eb;
+      max-height: 260px;       /* keeps low-res images visually smaller */
+      object-fit: contain;
+    }
+
+    figcaption {
+      font-size: 0.8rem;
+      color: #4b5563;
+      margin-top: 0.35rem;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding-inline: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Back to main portfolio -->
+  <a class="back-link" href="../index.html">← Back to main portfolio</a>
+
+  <header>
+    <h1>Capping the Interstate – Steel Truss Cap</h1>
+    <div class="meta">
+      CE 2200 Statics · Vanderbilt University · Fall 2023
+    </div>
+
+    <p class="section-intro">
+      In this team project I designed, analyzed, fabricated, and tested a steel truss prototype
+      for a proposed “cap” over Interstate 40 at Jefferson Street in Nashville. The goal
+      was to reconnect communities separated by the
+      Federal Highway System and to explore how structural engineering decisions have real-life implications.
+    </p>
+
+    <p class="section-intro">
+      Working from first principles, I developed a statically determinate truss, predicted
+      its failure modes using both yielding and Euler buckling criteria, then built and
+      load-tested a welded steel prototype. I used the results to design community
+      bridge load layouts that are structurally efficient and resilient to real-world
+      uncertainties.
+    </p>
+
+    <div class="tag-row">
+      <span class="tag">Steel Truss Design</span>
+      <span class="tag">Welding & Fabrication</span>
+      <span class="tag">Buckling Analysis</span>
+      <span class="tag">Community-Focused Design</span>
+      <span class="tag">Statics</span>
+    </div>
+
+    <!-- Optional hero image – update src to your actual file path -->
+    <!-- <img src="../images/capping-interstate-hero.png"
+         alt="Steel truss prototype used for the Capping the Interstate project"
+         class="hero-image">
+    <div class="hero-caption">
+      Welded steel truss prototype used to study load paths and failure modes for a proposed highway cap.
+    </div> -->
+  </header>
+
+  <section>
+    <h2>Context & Design Goals</h2>
+    <p class="section-intro">
+      The project was inspired by Nashville’s efforts to cap Interstate 40 and repair the
+      damage done to Jefferson Street’s historically Black neighborhoods when the
+      highway was first constructed. My objectives were to:
+    </p>
+    <ul>
+      <li>Research how the Federal-Aid Highway Act and interstate routing impacted URM communities.</li>
+      <li>Design a repeatable steel truss module that could span the highway and support a new green space.</li>
+      <li>Predict member forces and failure modes using statics and stability theory.</li>
+      <li>Fabricate a lab-scale prototype with welded and bolted connections and test it to failure.</li>
+      <li>Translate results into safe load layouts for community buildings, landscaping, and play areas.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Preliminary Truss Design & Analysis</h2>
+    <p class="section-intro">
+      I began with a symmetric Pratt-style truss designed for a 300&nbsp;lb central point
+      load, representing part of the surface park and pedestrian traffic. Using the
+      method of joints and method of sections, I solved for axial forces in each member
+      and verified the results with a Johns Hopkins online truss calculator. The analytic
+      and simulation results matched, confirming the internal force diagram used for
+      subsequent design work.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Member force prediction</h3>
+        <p>
+          For the 300&nbsp;lb design load I computed axial forces in all members and
+          classified them as tension or compression. This established which members would
+          be governed by yielding and which would be governed by Euler buckling.
+        </p>
+        <ul>
+          <li>Symmetric span with central load.</li>
+          <li>Statics: ∑F<sub>x</sub>, ∑F<sub>y</sub>, ∑M = 0.</li>
+          <li>Hand calcs checked against truss software.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Failure criteria</h3>
+        <p>
+          For each member I compared allowable axial stress
+          (σ<sub>all</sub> = N/A) to material yield strength and calculated critical
+          buckling loads using Euler’s formula:
+        </p>
+        <ul>
+          <li>σ<sub>all</sub> &lt; σ<sub>y</sub> for yielding.</li>
+          <li>P<sub>cr</sub> = π²EI / (kL)² with pin-pin members (k = 1).</li>
+          <li>Two cross-sections: solid flat bars and channel sections.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Manufacturing the Steel Truss Prototype</h2>
+    <p class="section-intro">
+      To validate the analysis, I fabricated a lab-scale steel truss using flat bar and
+      channel stock, cut connection plates, and a mix of welded and bolted pin
+      connections.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Member & connection prep</h3>
+        <p>
+          I cut bar stock for the top and bottom chords, diagonals, and verticals, then
+          machined small connection plates with centered ¼-inch bolt holes to act as pin
+          bars. Slots were cut in the members and plates so they could be welded together
+          while maintaining alignment.
+        </p>
+        <ul>
+          <li>1/8&quot; × 1&quot; bar stock for most members.</li>
+          <li>Channel section for the top chord.</li>
+          <li>Plates sized to maintain pin spacing and edge distance.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Welding sequence & distortion control</h3>
+        <p>
+          To avoid thermal warping, I used short welds, alternating sides, and allowed
+          the assembly to cool between phases.
+        </p>
+        <ul>
+          <li>Phase 1 – Weld plates to member ends using magnets for alignment.</li>
+          <li>Phase 2 – Weld pin bars to the top channel and bottom chord with 10&quot; spacing.</li>
+          <li>Phase 3 – Insert members between plate pairs and secure with ¼&quot; bolts.</li>
+        </ul>
+        <p>
+          Careful weld sequencing preserved the intended geometry so the prototype
+          matched the analytical model as closely as possible.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Bolting & connection behavior</h3>
+        <p>
+          Bolts were tightened enough to remove play but not so tight that they behaved
+          as fully fixed connections. Over-tightening would effectively reduce the
+          effective length factor k, increasing buckling capacity but also altering
+          the load path away from the ideal pin-joint model.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Structural Calculations & Predicted Failure</h2>
+    <p class="section-intro">
+      Using measured cross-sections, I computed moments of inertia for both the
+      flat-bar and channel members, then evaluated buckling and yielding capacities
+      member-by-member.
+    </p>
+
+    <ul>
+      <li>Computed I for each section from composite area formulas.</li>
+      <li>Evaluated P<sub>cr</sub> for all compression members and σ<sub>all</sub> for all members.</li>
+      <li>Identified controlling buckling member and controlling tension member.</li>
+    </ul>
+
+    <p>
+      For the prototype geometry the controlling theoretical limit was buckling of one
+      compression member at approximately 1,644&nbsp;N (≈370&nbsp;lb), while yielding did
+      not control until over 20&nbsp;kN. This suggested the truss should fail by buckling
+      well before any member yielded.
+    </p>
+  </section>
+
+  <section>
+    <h2>Lab Testing & Failure Analysis</h2>
+    <p class="section-intro">
+      I tested the prototype using a rope-and-winch apparatus that applied a vertical
+      load at the central top joint, with the ends supported on wood frames. Load was
+      measured with an inline scale until the truss failed.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Measured performance</h3>
+        <ul>
+          <li>Failure load ≈ 538&nbsp;lb.</li>
+          <li>Observed inelastic buckling of the second diagonal member from one end.</li>
+          <li>No visible yielding of members or fracture at welds.</li>
+        </ul>
+        <p>
+          The prototype exceeded the predicted buckling load but still failed by
+          compression instability rather than material yield, validating the choice of
+          failure mode.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Explaining the discrepancy</h3>
+        <p>
+          The higher-than-predicted failure load was likely due to partially fixed
+          connections created by bolt preload and weld restraint. This effectively
+          reduced the effective length of some compression members (k &lt; 1), increasing
+          their buckling capacity while also redistributing forces away from the idealized
+          statics model.
+        </p>
+        <p>
+          The test highlighted how sensitive real trusses are to connection details and
+          why conservative assumptions are important in design.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Community Bridge Layout & Load Combinations</h2>
+    <p class="section-intro">
+      To translate the prototype into a conceptual bridge, I considered three surface
+      loads per module: a small community building, landscaped area, and playground.
+      Each was converted to an equivalent nodal load on the truss and combined into six
+      possible configurations.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Statistical load balancing</h3>
+        <p>
+          For each configuration I solved the member forces and computed the standard
+          deviation of axial loads. Lower standard deviation indicated a more even load
+          distribution (no single “overworked” member).
+        </p>
+        <ul>
+          <li>Loads #1 and #5: most even distribution, best use of structural capacity.</li>
+          <li>Loads #2 and #6: acceptable but less uniform.</li>
+          <li>Loads #3 and #4: least uniform; still safe but with less margin.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Safety margins</h3>
+        <p>
+          Using the prototype’s controlling buckling and tension capacities as a
+          reference, I checked each configuration:
+        </p>
+        <ul>
+          <li>Weakest compression member remained &gt;100&nbsp;lb below buckling.</li>
+          <li>Weakest tension member remained &gt;4,000&nbsp;lb below yield.</li>
+          <li>No configuration approached failure, even before adding live-load factors.</li>
+        </ul>
+        <p>
+          Based on this analysis I recommended using the Load #1 / #5 layouts, which
+          place the playground near midspan to share load efficiently across the truss.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Impact & Reflection</h2>
+    <p class="section-intro">
+      Beyond the calculations, the project underscored how engineering decisions shape
+      communities. The original interstate alignment through Jefferson Street displaced
+      residents and depressed property values; a thoughtfully designed cap can help
+      repair some of that damage by providing safe, accessible public space and
+      reconnecting neighborhoods.
+    </p>
+
+    <p class="section-intro">
+      Working through research, design, fabrication, testing, and community-oriented
+      recommendations gave me a more complete view of what it means to be an engineer:
+      not just solving for forces and factors of safety, but understanding who is affected
+      by those solutions and designing accordingly.
+    </p>
+  </section>
+</body>
+</html>

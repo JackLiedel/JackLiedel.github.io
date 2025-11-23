@@ -1,1 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aerospace Design – Course Projects | Jack Liedel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    /* GLOBAL RESET */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* LIGHT THEME TO MATCH MAIN PORTFOLIO */
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+      line-height: 1.6;
+      background: #ffffff;
+      color: #111827;
+    }
+
+    a {
+      color: #1d4ed8;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .back-link {
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+      color: #4b5563;
+    }
+
+    header {
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.25rem;
+      color: #111827;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+      color: #111827;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.35rem;
+      color: #111827;
+    }
+
+    p {
+      margin-bottom: 0.75rem;
+      color: #111827;
+    }
+
+    .meta {
+      font-size: 0.9rem;
+      color: #6b7280;
+      margin-bottom: 1rem;
+    }
+
+    .section-intro {
+      max-width: 70ch;
+    }
+
+    /* TAGS */
+    .tag-row {
+      margin-top: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      background: #f3f4f6;
+      color: #111827;
+      border: 1px solid #e5e7eb;
+    }
+
+    /* ASSIGNMENT GRID */
+    .assignment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    .assignment-card {
+      background: #ffffff;
+      border-radius: 0.9rem;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 6px 18px rgba(15,23,42,0.06);
+      padding: 1.2rem 1.2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .assignment-meta {
+      font-size: 0.8rem;
+      color: #6b7280;
+      margin-bottom: 0.3rem;
+    }
+
+    .assignment-desc {
+      font-size: 0.9rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .assignment-link {
+      font-size: 0.85rem;
+      font-weight: 500;
+      align-self: flex-start;
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid #1d4ed8;
+      color: #1d4ed8;
+      text-decoration: none;
+      margin-top: 0.25rem;
+    }
+
+    .assignment-link:hover {
+      background: #eff6ff;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding-inline: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="back-link" href="../index.html">← Back to main portfolio</a>
+
+  <header>
+    <h1>Aerospace Design – Numerical Modeling & Propulsion</h1>
+
+    <div class="meta">
+      Student · Aerospace Design Course · Vanderbilt University · 2024–2025
+    </div>
+
+    <p class="section-intro">
+      This course sequence focused on building numerical tools for aerospace systems: modeling rocket
+      ascent and recovery, interplanetary transfers, nozzle performance, and ramjet propulsion. Each
+      assignment combined governing equations, MATLAB implementations, and engineering design trade studies.
+    </p>
+
+    <p class="section-intro">
+      Below are selected assignments from the class, each presented as a short project with its own slide
+      deck and supporting analysis.
+    </p>
+
+    <div class="tag-row">
+      <span class="tag">Rocket Flight Modeling</span>
+      <span class="tag">Numerical Methods</span>
+      <span class="tag">Orbital Mechanics</span>
+      <span class="tag">Propulsion</span>
+      <span class="tag">MATLAB</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>Assignment Gallery</h2>
+    <p class="section-intro">
+      Each card links to the full slide deck for the corresponding assignment. Update the <code>href</code>
+      paths to match your final PDF filenames in the <code>media</code> folder.
+    </p>
+
+    <div class="assignment-grid">
+      <!-- ASSIGNMENT 2 -->
+      <article class="assignment-card">
+        <div>
+          <div class="assignment-meta">Assignment #2</div>
+          <h3>Post-Apogee Recovery & Parachute Deployment</h3>
+          <p class="assignment-desc">
+            Modeled post-apogee flight of a high-power rocket, including main-parachute inflation,
+            shock-cord loads, and landing impact. Selected an optimal deployment altitude that satisfied
+            both load limits and recovery constraints.
+          </p>
+        </div>
+        <!-- TODO: rename this file to match your site, then update the path -->
+        <a class="assignment-link" href="../media/aero-assignment-2.pdf" target="_blank" rel="noopener">
+          View slides (PDF)
+        </a>
+      </article>
+
+      <!-- ASSIGNMENT 3 -->
+      <article class="assignment-card">
+        <div>
+          <div class="assignment-meta">Assignment #3</div>
+          <h3>Pre-Apogee Ascent with Wind & Launch Angle</h3>
+          <p class="assignment-desc">
+            Built a four-phase ascent model to simulate rocket motion from ignition through burnout,
+            including windcocking, side-wind profiles, and non-linear density variation. Compared
+            trajectories for different wind speeds and launch angles.
+          </p>
+        </div>
+        <a class="assignment-link" href="../media/aero-assignment-3.pdf" target="_blank" rel="noopener">
+          View slides (PDF)
+        </a>
+      </article>
+
+      <!-- ASSIGNMENT 4 (IMPULSIVE TRANSFER) -->
+      <article class="assignment-card">
+        <div>
+          <div class="assignment-meta">Assignment #4</div>
+          <h3>Impulsive Earth-to-Mars Transfer Δv Family</h3>
+          <p class="assignment-desc">
+            Modeled a three-body Earth–spacecraft–Mars problem with impulsive burns from LEO to LMO.
+            Generated a family of Δv solutions that reach Mars while maintaining safe atmospheric
+            entry conditions.
+          </p>
+        </div>
+        <a class="assignment-link" href="../media/aero-assignment-4-impulsive.pdf" target="_blank" rel="noopener">
+          View slides (PDF)
+        </a>
+      </article>
+
+      <!-- ASSIGNMENT 5 (LOW-THRUST / SOLAR) -->
+      <article class="assignment-card">
+        <div>
+          <div class="assignment-meta">Assignment #5</div>
+          <h3>Low-Thrust Earth-to-Mars Mission Design</h3>
+          <p class="assignment-desc">
+            Extended the transfer analysis to include constant and solar-powered low thrust. Compared
+            travel time, mass evolution, and Mars-arrival conditions for different thrust profiles and
+            thrust-reversal strategies.
+          </p>
+        </div>
+        <a class="assignment-link" href="../media/aero-assignment-5-low-thrust.pdf" target="_blank" rel="noopener">
+          View slides (PDF)
+        </a>
+      </article>
+
+      <!-- ASSIGNMENT 6 (NOZZLE FLOW) -->
+      <article class="assignment-card">
+        <div>
+          <div class="assignment-meta">Assignment #6</div>
+          <h3>Nozzle Area–Mach Relations & Thrust Coefficient</h3>
+          <p class="assignment-desc">
+            Implemented a converging–diverging nozzle solver to relate exit Mach number to area ratio and
+            computed thrust coefficient versus ambient pressure for a high-expansion nozzle.
+          </p>
+        </div>
+        <a class="assignment-link" href="../media/aero-assignment-6-nozzle.pdf" target="_blank" rel="noopener">
+          View slides (PDF)
+        </a>
+      </article>
+
+      <!-- ASSIGNMENT 7 (IDEAL RAMJET) -->
+      <article class="assignment-card">
+        <div>
+          <div class="assignment-meta">Assignment #7</div>
+          <h3>Ideal Ramjet Ignition & Specific Thrust</h3>
+          <p class="assignment-desc">
+            Determined the earliest flight Mach number at which an ideal ramjet can ignite without shocks
+            at the nozzle exit, and analyzed specific thrust as a function of flight Mach number and area
+            ratio.
+          </p>
+        </div>
+        <a class="assignment-link" href="../media/aero-assignment-7-ideal-ramjet.pdf" target="_blank" rel="noopener">
+          View slides (PDF)
+        </a>
+      </article>
+
+      <!-- ASSIGNMENT 8 (REAL RAMJET) -->
+      <article class="assignment-card">
+        <div>
+          <div class="assignment-meta">Assignment #8</div>
+          <h3>Real-Gas Ramjet Performance</h3>
+          <p class="assignment-desc">
+            Built on the ideal-ramjet work by incorporating real-gas properties. Selected an optimal area
+            ratio and recomputed specific thrust using temperature-dependent cp and γ to quantify the
+            performance penalty relative to the ideal model.
+          </p>
+        </div>
+        <a class="assignment-link" href="../media/aero-assignment-8-real-ramjet.pdf" target="_blank" rel="noopener">
+          View slides (PDF)
+        </a>
+      </article>
+    </div>
+  </section>
+</body>
+</html>
 
